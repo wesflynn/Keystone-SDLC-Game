@@ -1,6 +1,7 @@
 package game.objects;
 
 import game.platform.Drawable;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public abstract class Character implements Drawable
@@ -55,7 +56,10 @@ public abstract class Character implements Drawable
     }
     
     @Override
-    public void draw() {
-        
+    public void draw(GraphicsContext brush) {
+        brush.setFill(color);
+        brush.fillOval(posX, posY, WIDTH, HEIGHT);
+        brush.setStroke(Color.BLACK);
+        brush.strokeOval(posX, posY, WIDTH, HEIGHT);
     }
 }
