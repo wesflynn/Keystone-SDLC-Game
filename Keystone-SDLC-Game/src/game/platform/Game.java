@@ -42,7 +42,7 @@ public class Game extends Application
         
         AnimationTimer gameLoop = new AnimationTimer() {
             
-            Image bgImage = new Image("office-bg1.jpg");
+            Image bgImage = new Image("images/office-bg1.jpg");
             
             long then = System.nanoTime();
             @Override
