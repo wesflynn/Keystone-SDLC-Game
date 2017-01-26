@@ -2,10 +2,6 @@ package game.objects;
 
 import game.platform.Drawable;
 
-/**
- *
- * @author adamb
- */
 public class ProgressBar implements Drawable
 {
 

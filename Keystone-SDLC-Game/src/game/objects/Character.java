@@ -4,5 +4,23 @@ import game.platform.Drawable;
 
 public abstract class Character implements Drawable
 {
-    // add characteristics common between player and NPC    ie. x and y positions
+    private int posX, posY;
+    
+    public int getPosX()
+    {
+        return this.posX;
+    }
+    public int getPosY()
+    {
+        return this.posY;
+    }
+    
+    public void setPosX(int x)
+    {
+        this.posX = x;
+    }
+    public void setPosY(int y)
+    {
+        this.posY = y;
+    }
 }
