@@ -26,6 +26,7 @@ public class Game extends Application
     @Override
     public void start(Stage mainStage) throws Exception
     {
+        // Use group if stackpane givees problems
         StackPane root = new StackPane();
         Scene scene = new Scene(root);
         
@@ -39,7 +40,7 @@ public class Game extends Application
         
         GraphicsContext brush = canvas.getGraphicsContext2D();
         
-        new AnimationTimer() {
+        AnimationTimer gameLoop = new AnimationTimer() {
             
             long then = System.nanoTime();
             @Override
@@ -56,11 +57,12 @@ public class Game extends Application
             }
             
             public void resetCanvas(GraphicsContext brush) {
-                brush.setFill(Color.RED);
+                brush.setFill(Color.BLACK);
                 brush.fillRect(-10, -10, canvas.getWidth()*2, canvas.getHeight()*2);
             }
-        }.start();
+        };
         
+        gameLoop.start();
         mainStage.show();
     }
     
