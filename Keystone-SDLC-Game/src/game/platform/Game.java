@@ -3,10 +3,6 @@ package game.platform;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-/**
- *
- * @author adamb
- */
 public class Game extends Application
 {
 
