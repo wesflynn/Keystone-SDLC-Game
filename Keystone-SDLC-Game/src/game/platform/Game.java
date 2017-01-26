@@ -1,5 +1,6 @@
 package game.platform;
 
+import game.objects.Player;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -10,6 +11,11 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+/**
+ * main class. Builds and runs the game.
+ * 
+ * @author adamb
+ */
 public class Game extends Application
 {
     final private double DEFAULT_WIDTH = 800;
@@ -55,6 +61,8 @@ public class Game extends Application
 
                     // update and draw
                     brush.drawImage(bgImage, 0, 0);
+                    Player p = new Player();
+                    p.draw(brush);
                 }
             }
             

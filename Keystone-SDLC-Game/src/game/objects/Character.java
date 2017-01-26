@@ -4,6 +4,11 @@ import game.platform.Drawable;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
+/**
+ * Framework for character objects within the game
+ * 
+ * @author adamb
+ */
 public abstract class Character implements Drawable
 {
     private final int WIDTH = 50;

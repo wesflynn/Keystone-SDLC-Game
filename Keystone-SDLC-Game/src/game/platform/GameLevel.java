@@ -7,7 +7,7 @@ import javafx.scene.image.Image;
 public class GameLevel
 {
     /**
-     * Should be a different level for each stage of SDLC
+     * Builds a new level
      * 
      * @param player character controlled by player
      * @param npcs arraylist of npc characters in level
