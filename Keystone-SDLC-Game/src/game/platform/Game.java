@@ -42,6 +42,8 @@ public class Game extends Application
         
         AnimationTimer gameLoop = new AnimationTimer() {
             
+            Image bgImage = new Image("http://images.hanleywood.com/cvv/HomeOffice_Rem_birdseye.jpg");
+            
             long then = System.nanoTime();
             @Override
             public void handle(long now) {
@@ -52,7 +54,7 @@ public class Game extends Application
                     this.resetCanvas(brush);
 
                     // update and draw
-                    brush.drawImage(new Image("http://images.hanleywood.com/cvv/HomeOffice_Rem_birdseye.jpg"), 0, 0);
+                    brush.drawImage(bgImage, 0, 0);
                 }
             }
             
