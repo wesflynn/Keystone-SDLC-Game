@@ -17,7 +17,15 @@ public class Game extends Application
     @Override
     public void start(Stage primaryStage) throws Exception
     {
-         
+        // build stage
+        
+        // game loop
+        while(true) {
+            //be careful
+            
+            break;//REMOVE WHEN READY
+        }
+        // build level onto window in game loop 
     }
     
 }
