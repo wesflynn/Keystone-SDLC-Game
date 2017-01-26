@@ -15,5 +15,9 @@ public class GameLevel
      */
     public GameLevel(Player player, ArrayList<NPC> npcs, Image background) {
         
+        
+        player.update();
+        
+        
     }
 }

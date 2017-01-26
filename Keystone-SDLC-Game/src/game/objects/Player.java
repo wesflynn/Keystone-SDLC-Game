@@ -9,6 +9,12 @@ import javafx.scene.paint.Color;
  */
 public class Player extends Character
 {
+    /*
+    TODO:
+        - movement
+        - hitbox (put in character??)
+        - interaction
+    */
     private final int DEAFULT_POS_X = 250;
     private final int DEFAULT_POS_Y = 530;
     private final Color DEFAULT_COLOR = Color.RED;
