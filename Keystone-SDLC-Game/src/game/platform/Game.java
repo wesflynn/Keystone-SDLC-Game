@@ -49,28 +49,18 @@ public class Game extends Application
         
         GraphicsContext brush = canvas.getGraphicsContext2D();
         
-        ArrayList<String> input = new ArrayList<String>();
+        ArrayList<String> input = new ArrayList<>();
                     
-        scene.setOnKeyPressed(
-            new EventHandler<KeyEvent>()
-            {
-                public void handle(KeyEvent e)
-                    {
-                        String code = e.getCode().toString();
-                        if ( !input.contains(code) )
-                            input.add( code );
-                    }
-            });
+        scene.setOnKeyPressed((KeyEvent e) -> {
+            String code = e.getCode().toString();
+            if ( !input.contains(code) )
+                input.add( code );
+        });
 
-        scene.setOnKeyReleased(
-            new EventHandler<KeyEvent>()
-            {
-                public void handle(KeyEvent e)
-                {
-                    String code = e.getCode().toString();
-                    input.remove( code );
-                }
-            });
+        scene.setOnKeyReleased((KeyEvent e) -> {
+            String code = e.getCode().toString();
+            input.remove( code );
+        });
                    
         // update and draw
         Image bgImage = new Image("images/office-bg1.jpg");
