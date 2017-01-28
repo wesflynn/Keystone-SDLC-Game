@@ -1,5 +1,6 @@
 package game.platform;
 
+import game.objects.Message;
 import game.objects.Player;
 import java.util.ArrayList;
 import javafx.animation.AnimationTimer;
@@ -68,7 +69,10 @@ public class Game extends Application
         Player player = new Player();
         // dont know why i had to do this to get npc to work in the game class , but other wise it wouldnt recognize NPC
         game.objects.NPC npc = new game.objects.NPC(235,225,Color.BLUE);
-                    
+        // testing message class inputing text
+        Message test = new Message("this is a simple test to show how text boxes work.");
+        
+        // start of game loop logic
         AnimationTimer gameLoop = new AnimationTimer() {
             
             @Override
@@ -99,7 +103,8 @@ public class Game extends Application
                     
                     //just for testing purposes
                     if (player.intersects(player, npc))
-                        System.out.println("yay it works!");
+                        test.draw(brush);
+//                        System.out.println("yay it works!");
                         
                 }
 
