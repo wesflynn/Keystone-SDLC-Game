@@ -37,18 +37,18 @@ public class Player extends Character
         posX += velocityX * time;
         posY += velocityY * time;
     }
-    // may want to put the movement from game in here to clean up code some
+
     public void move(ArrayList<String> input)
     {
         setVelocity(0,0);
         if(input.contains("UP"))
-            addVelocity(0,-50);
+            addVelocity(0,-100);
         if(input.contains("LEFT"))
-            addVelocity(-50,0);    
+            addVelocity(-100,0);    
         if(input.contains("RIGHT"))
-            addVelocity(50,0);    
+            addVelocity(100,0);    
         if(input.contains("DOWN"))
-            addVelocity(0,50);
+            addVelocity(0,100);
     }
     
         public void setPosition(double x, double y)

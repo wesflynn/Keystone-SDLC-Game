@@ -72,9 +72,8 @@ public class Game extends Application
                 }
             });
                    
-        Image bgImage = new Image("images/office-bg1.jpg");
-
         // update and draw
+        Image bgImage = new Image("images/office-bg1.jpg");
         brush.drawImage(bgImage, 0, 0);
         Player player = new Player();
                     
@@ -102,10 +101,7 @@ public class Game extends Application
                     // player movement
                     player.move(input);
                     player.update(elapsedTime);
-
-                    
-                    player.draw(brush);
-                    
+                    player.draw(brush); 
                 }
 
             public void resetCanvas(GraphicsContext brush) {
