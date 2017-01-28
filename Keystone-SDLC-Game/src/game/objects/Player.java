@@ -12,8 +12,8 @@ public class Player extends Character
 {
     /*
     TODO:
-        - hitbox (put in character??)
-        - interaction
+        - expanded hitbox (bigger then npc or player objects, possibly getboundy +50 pixels or something?)
+        - interaction (add conditional key pressed plus collision detection to trigger event, like bringing up message window)
     */
     private double velocityX;
     private double velocityY;
@@ -35,7 +35,7 @@ public class Player extends Character
         posX += velocityX * time;
         posY += velocityY * time;
     }
-
+//  controls the player movement
     public void move(ArrayList<String> input)
     {
         setVelocity(0,0);
@@ -49,7 +49,7 @@ public class Player extends Character
             addVelocity(0,100);
     }
     
-        public void setPosition(double x, double y)
+    public void setPosition(double x, double y)
     {
         super.setPosX(x);
         super.setPosY(y);
@@ -60,13 +60,14 @@ public class Player extends Character
         velocityX = x;
         velocityY = y;
     }
-        public void addVelocity(double x, double y)
+    
+    public void addVelocity(double x, double y)
     {
         velocityX += x;
         velocityY += y;
     }
         
-       public boolean intersects(Player p,NPC npc)
+    public boolean intersects(Player p,NPC npc)
     {
         return p.getBoundary().intersects( npc.getBoundary() );
     }
