@@ -1,12 +1,15 @@
 package game.platform;
 
 import game.objects.Player;
+import java.util.ArrayList;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -20,7 +23,7 @@ public class Game extends Application
 {
     final private double DEFAULT_WIDTH = 800;
     final private double DEFAULT_HEIGHT = 780;
-
+    long then = System.nanoTime();;
     /**
      * @param args the command line arguments
      */
@@ -46,25 +49,77 @@ public class Game extends Application
         
         GraphicsContext brush = canvas.getGraphicsContext2D();
         
+        ArrayList<String> input = new ArrayList<String>();
+                    
+        scene.setOnKeyPressed(
+            new EventHandler<KeyEvent>()
+            {
+                public void handle(KeyEvent e)
+                    {
+                        String code = e.getCode().toString();
+                        if ( !input.contains(code) )
+                            input.add( code );
+                    }
+            });
+
+                    scene.setOnKeyReleased(
+                       new EventHandler<KeyEvent>()
+                       {
+                           public void handle(KeyEvent e)
+                           {
+                               String code = e.getCode().toString();
+                               input.remove( code );
+                           }
+                       });
+        
+                    
+                    Image bgImage = new Image("images/office-bg1.jpg");
+                                        // Reset Canvas
+//                    this.resetCanvas(brush);
+
+                    // update and draw
+                    brush.drawImage(bgImage, 0, 0);
+                    Player player = new Player();
+//                    player.draw(brush);
+                    
         AnimationTimer gameLoop = new AnimationTimer() {
             
-            Image bgImage = new Image("images/office-bg1.jpg");
-            
-            long then = System.nanoTime();
             @Override
-            public void handle(long now) {
-                if(now - then > 1000000) {
-                    then = now;
+            public void handle(long currentNanoTime)
+            {
+                // calculate time since last update.
+                double elapsedTime = (currentNanoTime - then) / 1000000000.0;
+                then = currentNanoTime;
+                
+                //couldn't figure out how to make game loop work using previous logic so i commented it out
+//            @Override
+//            public void handle(long now) {
+//                if(now - then > 1000000) {
+//                    then = now;
                     
                     // Reset Canvas
                     this.resetCanvas(brush);
 
-                    // update and draw
+                   //  draw background
                     brush.drawImage(bgImage, 0, 0);
-                    Player p = new Player();
-                    p.draw(brush);
+
+                    // player movement                
+                    player.setVelocity(0,0);
+                        if(input.contains("UP"))
+                            player.addVelocity(0,-50);
+                        if(input.contains("LEFT"))
+                            player.addVelocity(-50,0);    
+                        if(input.contains("RIGHT"))
+                            player.addVelocity(50,0);    
+                        if(input.contains("DOWN"))
+                            player.addVelocity(0,50);
+                    player.update(elapsedTime);
+
+                    
+                    player.draw(brush);
+                    
                 }
-            }
+            
             
             public void resetCanvas(GraphicsContext brush) {
                 brush.setFill(Color.BLACK);

@@ -11,30 +11,30 @@ import javafx.scene.paint.Color;
  */
 public abstract class Character implements Drawable
 {
-    private final int WIDTH = 50;
-    private final int HEIGHT = 50;
+    public final double WIDTH = 50;
+    public final double HEIGHT = 50;
     
     // Global private variables
-    private int posX, posY;
+    public double posX, posY;
     private Color color;
     
     // Accessors
-    public final int getWidth()
+    public final double getWidth()
     {
         return this.WIDTH;
     }
     
-    public final int getHeight()
+    public final double getHeight()
     {
         return this.HEIGHT;
     }
     
-    public int getPosX()
+    public double getPosX()
     {
         return this.posX;
     }
     
-    public int getPosY()
+    public double getPosY()
     {
         return this.posY;
     }
@@ -45,12 +45,12 @@ public abstract class Character implements Drawable
     }
     
     // Mutators
-    public void setPosX(int x)
+    public void setPosX(double x)
     {
         this.posX = x;
     }
     
-    public void setPosY(int y)
+    public void setPosY(double y)
     {
         this.posY = y;
     }

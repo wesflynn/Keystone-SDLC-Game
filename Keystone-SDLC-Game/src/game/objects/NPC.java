@@ -1,5 +1,7 @@
 package game.objects;
 
+import javafx.scene.paint.Color;
+
 /**
  * Class for Non-Playable Characters
  */
@@ -8,8 +10,11 @@ public class NPC extends Character
     private static long counter = 1L;
     private final long ID = counter;
     
-    public NPC()
+    public NPC(int posX , int posY , Color color)
     {
+        setPosX(posX);
+        setPosY(posY);
+        setColor(color);
         counter++;
     }
     /*
@@ -33,9 +38,10 @@ public class NPC extends Character
     }
     */
     @Override
-    public void update()
+    public void update(double time)
     {
         
     }
+
     
 }

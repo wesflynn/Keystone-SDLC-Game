@@ -11,7 +11,7 @@ public class ProgressBar implements Drawable
     private int progress = 0;
     
     @Override
-    public void update()
+    public void update(double time)
     {
         
     }
