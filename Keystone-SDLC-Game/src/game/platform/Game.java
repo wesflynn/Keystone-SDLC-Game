@@ -62,25 +62,21 @@ public class Game extends Application
                     }
             });
 
-                    scene.setOnKeyReleased(
-                       new EventHandler<KeyEvent>()
-                       {
-                           public void handle(KeyEvent e)
-                           {
-                               String code = e.getCode().toString();
-                               input.remove( code );
-                           }
-                       });
-        
-                    
-                    Image bgImage = new Image("images/office-bg1.jpg");
-                                        // Reset Canvas
-//                    this.resetCanvas(brush);
+        scene.setOnKeyReleased(
+            new EventHandler<KeyEvent>()
+            {
+                public void handle(KeyEvent e)
+                {
+                    String code = e.getCode().toString();
+                    input.remove( code );
+                }
+            });
+                   
+        Image bgImage = new Image("images/office-bg1.jpg");
 
-                    // update and draw
-                    brush.drawImage(bgImage, 0, 0);
-                    Player player = new Player();
-//                    player.draw(brush);
+        // update and draw
+        brush.drawImage(bgImage, 0, 0);
+        Player player = new Player();
                     
         AnimationTimer gameLoop = new AnimationTimer() {
             
