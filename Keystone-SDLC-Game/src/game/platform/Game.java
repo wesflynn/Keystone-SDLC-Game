@@ -62,10 +62,12 @@ public class Game extends Application
             input.remove( code );
         });
                    
-        // update and draw
+        // update and draw these things can likley be moved to game level class later
         Image bgImage = new Image("images/office-bg1.jpg");
         brush.drawImage(bgImage, 0, 0);
         Player player = new Player();
+        // dont know why i had to do this to get npc to work in the game class , but other wise it wouldnt recognize NPC
+        game.objects.NPC npc = new game.objects.NPC(235,225,Color.BLUE);
                     
         AnimationTimer gameLoop = new AnimationTimer() {
             
@@ -91,7 +93,8 @@ public class Game extends Application
                     // player movement
                     player.move(input);
                     player.update(elapsedTime);
-                    player.draw(brush); 
+                    player.draw(brush);
+                    npc.draw(brush);
                 }
 
             public void resetCanvas(GraphicsContext brush) {

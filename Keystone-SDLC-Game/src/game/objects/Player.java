@@ -1,6 +1,5 @@
 package game.objects;
 
-import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import javafx.scene.paint.Color;
 
@@ -13,7 +12,6 @@ public class Player extends Character
 {
     /*
     TODO:
-        - movement
         - hitbox (put in character??)
         - interaction
     */

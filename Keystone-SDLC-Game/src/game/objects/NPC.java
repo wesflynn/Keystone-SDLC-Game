@@ -12,9 +12,9 @@ public class NPC extends Character
     
     public NPC(int posX , int posY , Color color)
     {
-        setPosX(posX);
-        setPosY(posY);
-        setColor(color);
+        super.setPosX(posX);
+        super.setPosY(posY);
+        super.setColor(color);
         counter++;
     }
     /*
