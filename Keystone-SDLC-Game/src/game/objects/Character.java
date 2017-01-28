@@ -1,6 +1,7 @@
 package game.objects;
 
 import game.platform.Drawable;
+import java.awt.geom.Rectangle2D;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
@@ -66,5 +67,11 @@ public abstract class Character implements Drawable
         brush.fillOval(posX, posY, WIDTH, HEIGHT);
         brush.setStroke(Color.BLACK);
         brush.strokeOval(posX, posY, WIDTH, HEIGHT);
+    }
+    
+            public Rectangle2D getBoundary()
+    {
+        //couldnt get return methods to work so had to make vars public
+        return new Rectangle2D.Double(posX,posY,WIDTH,HEIGHT);
     }
 }

@@ -68,14 +68,9 @@ public class Player extends Character
         velocityY += y;
     }
         
-        public Rectangle2D getBoundary()
+       public boolean intersects(Player p,NPC npc)
     {
-        //couldnt get return methods to work so had to make vars public
-        return new Rectangle2D.Double(posX,posY,WIDTH,HEIGHT);
-    }
-       public boolean intersects(Player p)
-    {
-        return p.getBoundary().intersects( this.getBoundary() );
+        return p.getBoundary().intersects( npc.getBoundary() );
     }
     
 }
