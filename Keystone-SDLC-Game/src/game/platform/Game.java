@@ -99,24 +99,15 @@ public class Game extends Application
                    //  draw background
                     brush.drawImage(bgImage, 0, 0);
 
-                    // player movement                
-                    player.setVelocity(0,0);
-                        if(input.contains("UP"))
-                            player.addVelocity(0,-50);
-                        if(input.contains("LEFT"))
-                            player.addVelocity(-50,0);    
-                        if(input.contains("RIGHT"))
-                            player.addVelocity(50,0);    
-                        if(input.contains("DOWN"))
-                            player.addVelocity(0,50);
+                    // player movement
+                    player.move(input);
                     player.update(elapsedTime);
 
                     
                     player.draw(brush);
                     
                 }
-            
-            
+
             public void resetCanvas(GraphicsContext brush) {
                 brush.setFill(Color.BLACK);
                 brush.fillRect(-10, -10, canvas.getWidth()*2, canvas.getHeight()*2);
