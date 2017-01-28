@@ -39,6 +39,7 @@ public class Message implements Drawable{
         brush.setStroke(Color.WHITE);
         brush.strokeRect(POSX, POSY, WIDTH, HEIGHT);
         brush.setFill(Color.WHITE);
+        // there is another text option which has max coordinates this may be useful for making text stay in box.
         brush.fillText(text, POSX+20, POSY+20);
     }
     
