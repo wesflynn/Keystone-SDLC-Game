@@ -103,9 +103,7 @@ public class Game extends Application
                     
                     //just for testing purposes
                     if (player.intersects(player, npc))
-                        test.draw(brush);
-//                        System.out.println("yay it works!");
-                        
+                        test.draw(brush);      
                 }
 
             public void resetCanvas(GraphicsContext brush) {

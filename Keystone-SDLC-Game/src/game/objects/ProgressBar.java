@@ -8,7 +8,12 @@ import javafx.scene.canvas.GraphicsContext;
  */
 public class ProgressBar implements Drawable
 {
-    private int progress = 0;
+    private int progress;
+    
+    public ProgressBar()
+    {
+        this.progress=5;
+    }
     
     @Override
     public void update(double time)
