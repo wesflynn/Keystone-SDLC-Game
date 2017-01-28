@@ -1,0 +1,226 @@
+You work for a failing company that has not produced the best results for the shareholders
+over the last couple years. As the pressure mounts the bosses get more and more desperate
+in order to have a profitable quarter.
+As project lead, the company has tasked you with creating the newest technology.
+The company has also gone ahead and hand picked a team for you with the "best of the best".
+
+Talk to your team members and search the area to solve the problems and push your tech onto
+the market. 
+Based on the Software Development Life Cycle choose the best responses for the problems given.
+  
+
+
+System Planning 
+
+- Define the Problem
+
+Without giving you the details the company expects a lot from you, only telling you that they
+"Want a new idea that will bring profit and secure for the company" The problem you are 
+facing seems to be quite vague. The team has met and conversed and come up with a few ideas
+in terms of what to create for the future. 
+
+	Small good 
+		- People from the team have become increasing interested in wearable tech,
+		with team members purchasing iPhone watches. Perhaps creating a watch that 
+		can work with both iPhone and Android is a good move to make.  
+
+	Small bad 
+		- The team has suggested that we just buy a bunch of fake iphones from 
+		the Chinese market and rebrand them and translate them into English. 
+
+	Big good 
+		- 
+
+	Big Bad
+		-A member of the team remembers reading something about nanotechnology and 
+		cybernetic bodily enhancements. He thinks that pushing an untested and 
+		slightly dangerous technology is a ballsy move that could push the company
+		into the future.   
+
+- Resource Plan 
+I know the company has given you a monumental task to come up with something to save the 
+company. But we need to distribute our resources appropriately in order to increase 
+efficency 
+
+	Small good
+		- You look at previous jobs that your team members have done and their job
+		within the project and assign roles based on that. 
+	Small bad
+		- Since the project is in its early phase it doesnt really matter who works
+		on what so let every pick the job they want to have no matter what their skills
+		are in that area.  
+
+	Big good
+		- You ask all your employees to list what skills they have and send them to
+		you. You look at the skills and jobs ahead and asign an employee to each one. 
+	Big bad
+		- Stressed with the task that you face, you decided that you should let
+		fate decided who does what. You write the jobs on a piece of paper and 
+		the names of all your employees on the other. You close your eyes and 
+		at random point to a name and job. 
+
+
+
+- Budget 
+The company doesn't really have a blank check to give us for this project, infact I don't
+think they have any cheques left to right, but they did give us a chance to write a proposal
+to say how much we need. 
+
+	Small good
+		- You think that in a crunch the team could pull it off with a conservative
+		budget, but this also leaves room for you to go over budget. 
+	Small bad
+		- You decide to calculate the value of each team members life savings based 
+		on nothing but pure speculation. You add it together, put a zero on the end
+		and send the boss an email saying "We need this amount of money". 
+	Big Good
+		- Bring the team together and ask them based on their skills what they think 
+		the budget should be, both with R&D, building and production. Giving you
+		the best possible chance to stay within budget.  
+	
+	Big Bad
+		- Ditch every idea you have had so far and go with the cybernetic bodily 
+		enhancements and ask the company for nothing short of a fortune to get
+		it off the ground. 
+
+
+- Schedule 
+I hear the company is in a tight spot right now and can't afford any delays or we are all
+out of a job. We should probably set some time lines so that we can get this product to 
+markey. 
+
+	Small good
+		- You set sprints and smaller due dates to get the project on track.
+
+	Small bad
+		- You send an end date in the future and tell the team the project must be 
+		done by that date, keeping the team on a tight leash 
+
+	Big Good
+		- Each team member has to report on how much time they think is required 
+		for each section of the project. Based on the teams report you create the 
+		schedule for the project. 
+
+	Big bad
+		- As project lead you dont think that a time line would solve anything.
+		Its going to get done when it gets done. Let the team be free and work at 
+		liesure. 
+
+
+- Feasibilty 
+I have doubts that this product is going to be feasible on the market and think that we should 
+have another look at just exactly we are trying to do.  
+
+	Small good
+		- Reassure him that the team has been hand picked and 
+		
+	small bad
+		-Ignore the complaint and tell the employee that if they speak out again they
+		will be off the project.
+
+	big good
+		- Within the group you decide to have a debate and appoint the employee who
+		had the concern to the "con" side and have someone else appointed to the
+		"pro" side. 
+
+	big bad	
+		- You think that anything can be done you ignore the complaint and proceed
+		to tell the employee about a more grand idea that is completely beyond the 
+		realm of possiblity. 
+
+Systems Analysis 
+
+- Gather Information
+I think that this is a good idea what we are trying to do, but I think that more information 
+is needed before we can proceed with peace of mind. 
+
+	small good
+		- On your own time research a few things and apply them to the project.
+	small bad
+		- Wikipedia is a reliable resource, check there for any information you need 
+	big good
+		- Based on the skills on your employees, assign a member to do research based
+		on the missing information your team needs.
+	big bad
+		- Check to see if there is a Reddit page about it, if not create one, and 
+		proceed to start the discussion.
+
+
+- Define System Requirements 
+So I was looking over all the requirements that this thing is going to need and I think 
+
+
+
+- Build Prototypes 
+Boss, I think that we need a prototype of this product to ensure user compatibility and 
+functionality. How complex should we make this thing. 
+
+	small good
+
+	small bad
+
+	big good
+
+	big bad
+
+
+
+- Prioritize Requirements 
+
+
+
+- Generate and Evaluate Alternatives 
+
+
+
+System Design 
+
+- Design Solution based on requirements 
+
+
+- Design application architecture / network 
+
+
+
+- Design user interface 
+
+
+
+- design system interfaces 
+
+
+- Design and integrate DataBase 
+
+
+- Design system controls 
+
+
+
+System Implementations
+
+- Verify and Test
+
+
+
+-Convert Data 
+
+
+
+- Train Users & Document System
+
+
+
+- Install the System
+
+
+
+
+System and Security 
+
+- Maintain the system
+
+
+- Enhance the System
+
+
+- Support the users 
