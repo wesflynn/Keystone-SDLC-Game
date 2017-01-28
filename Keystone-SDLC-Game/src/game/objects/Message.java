@@ -14,11 +14,16 @@ import javafx.scene.canvas.GraphicsContext;
  */
 public class Message implements Drawable{
     
-    
-    
+    private final double POSX, POSY;
+    private final double HEIGHT;
+    private final double WIDTH;
     public Message(String text)
     {
-        
+      // placeholder values
+      HEIGHT=100;
+      WIDTH=100;
+      POSX=450;
+      POSY=450;
     }
 
     @Override
