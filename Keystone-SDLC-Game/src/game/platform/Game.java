@@ -5,7 +5,6 @@ import game.objects.Player;
 import java.util.ArrayList;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -38,8 +37,7 @@ public class Game extends Application
     {
         // Use group if stackpane givees problems
         StackPane root = new StackPane();
-        Scene scene = new Scene(root);
-        
+        Scene scene = new Scene(root);    
         Canvas canvas = new Canvas(DEFAULT_WIDTH, DEFAULT_HEIGHT);
         root.getChildren().add(canvas);
         

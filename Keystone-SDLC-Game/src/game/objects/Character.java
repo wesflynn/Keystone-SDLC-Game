@@ -71,6 +71,7 @@ public abstract class Character implements Drawable
     public Rectangle2D getBoundary()
     {
         //couldnt get return methods to work so had to make vars public
-        return new Rectangle2D.Double(posX,posY,WIDTH,HEIGHT);
+        // adding extra to the height and width allows a buffer zone between player and npc
+        return new Rectangle2D.Double(posX,posY,WIDTH+5,HEIGHT+5);
     }
 }
