@@ -94,7 +94,13 @@ public class Game extends Application
                     player.move(input);
                     player.update(elapsedTime);
                     player.draw(brush);
+                    //can move drawing npc out of the loop after just put in here for test purposes
                     npc.draw(brush);
+                    
+                    //just for testing purposes
+                    if (player.intersects(player, npc))
+                        System.out.println("yay it works!");
+                        
                 }
 
             public void resetCanvas(GraphicsContext brush) {
