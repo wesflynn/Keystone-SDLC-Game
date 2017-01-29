@@ -10,34 +10,24 @@ public class NPC extends Character
     private static long counter = 1L;
     private final long ID = counter;
     
-    public NPC(double x, double y, Color color)
+    private Message message;
+    
+    public NPC(double x, double y, Color color, Message message)
     {
         super(x, y, color);
         counter++;
+        
+        this.message = message;
     }
-    /*
-    TODO:
-        - Hitbox
-        - Some way of getting the specific text for the NPC. Whether that means
-        storing the text in the class, or giving the NPC object an ID that refers
-        to text
-        - basic interaction
-    */
     
-    /*
-    OPTIONAL
-    
-    public boolean checkCollision(Player player)
-    {
-        - if player position is close enough,
-        return true (Start conversation)
-        - else
-        return false
-    }
-    */
     @Override
     public void update()
     {
         
+    }
+    
+    public Message getMessage()
+    {
+        return this.message;
     }
 }

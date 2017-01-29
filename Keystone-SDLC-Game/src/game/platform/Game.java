@@ -1,6 +1,7 @@
 package game.platform;
 
 import game.objects.Message;
+import game.objects.NPC;
 import game.objects.Player;
 import java.util.ArrayList;
 import javafx.animation.AnimationTimer;
@@ -45,51 +46,37 @@ public class Game extends Application
         mainStage.setTitle("Keystone SDLC 2D Game");
         
         GraphicsContext brush = canvas.getGraphicsContext2D();
-                   
-        // update and draw these things can likley be moved to game level class later
-        Image bgImage = new Image("images/office-bg1.jpg");
-        brush.drawImage(bgImage, 0, 0);
-        Player player = new Player();
-        // dont know why i had to do this to get npc to work in the game class , but other wise it wouldnt recognize NPC
-        game.objects.NPC npc = new game.objects.NPC(235,225,Color.BLUE);
-        // testing message class inputing text
-        Message test = new Message("this is a simple test to show how text boxes work.");
         
         // start of game loop logic
-        AnimationTimer gameLoop = new AnimationTimer() {
+        AnimationTimer gameLoop = new AnimationTimer()
+        {
             
-            ArrayList<String> input = GameLevel.getInput(scene);
+            GameLevel testLevel = Game.buildLevel1(scene);
             
             long then = System.nanoTime();
             @Override
-            public void handle(long now) {
-                if(now - then > 1000000) {
+            public void handle(long now)
+            {
+                // Sleep for at least 1000000 nanoseconds
+                //               a.k.a 1/1000th of a second
+                if(now - then > 1000000)
+                {
                     then = now;
                     
                     // Reset Canvas
                     this.resetCanvas(brush);
-
-                   //  draw background
-                    brush.drawImage(bgImage, 0, 0);
-
-                    // player movement
-                    player.move(input);
-                    player.update();
-                    player.draw(brush);
-                    //can move drawing npc out of the loop after just put in here for test purposes
-                    npc.draw(brush);
                     
-                    //just for testing purposes
-                    if (player.intersects(npc))
-                    {
-                        test.draw(brush);
-                    }
+                    // Update and Draw level
+                    testLevel.updateAndDraw(brush);
                 }
             }
 
-            public void resetCanvas(GraphicsContext brush) {
+            public void resetCanvas(GraphicsContext brush)
+            {
                 brush.setFill(Color.BLACK);
-                brush.fillRect(-10, -10, canvas.getWidth()*2, canvas.getHeight()*2);
+                brush.fillRect(-10, -10,
+                        canvas.getWidth()*2,
+                        canvas.getHeight()*2);
             }
         };
         
@@ -97,4 +84,16 @@ public class Game extends Application
         mainStage.show();
     }
     
+    private static GameLevel buildLevel1(Scene scene)
+    {
+        Player player = new Player();
+        ArrayList<NPC> npcs = new ArrayList<>();
+        Image bgImage = new Image("images/office-bg1.jpg");
+        
+        NPC npc1 = new NPC(235, 225, Color.BLUE,
+                new Message("this is a simple test to show how text boxes work."));
+        npcs.add(npc1);
+        
+        return new GameLevel(scene, player, npcs, bgImage);
+    }
 }
