@@ -51,23 +51,25 @@ public class Game extends Application
         AnimationTimer gameLoop = new AnimationTimer()
         {
             
-            GameLevel testLevel = Game.buildLevel1(scene);
+            GameLevel testLevel = Game.buildTestLevel(scene);
             
             long then = System.nanoTime();
             @Override
             public void handle(long now)
             {
+                GameLevel.CURRENT_LEVEL = testLevel;
                 // Sleep for at least 1000000 nanoseconds
                 //               a.k.a 1/1000th of a second
                 if(now - then > 1000000)
                 {
                     then = now;
+                    GameLevel currentLevel = GameLevel.CURRENT_LEVEL;
                     
                     // Reset Canvas
                     this.resetCanvas(brush);
                     
                     // Update and Draw level
-                    testLevel.updateAndDraw(brush);
+                    currentLevel.updateAndDraw(brush);
                 }
             }
 
@@ -84,7 +86,7 @@ public class Game extends Application
         mainStage.show();
     }
     
-    private static GameLevel buildLevel1(Scene scene)
+    private static GameLevel buildTestLevel(Scene scene)
     {
         Player player = new Player();
         ArrayList<NPC> npcs = new ArrayList<>();

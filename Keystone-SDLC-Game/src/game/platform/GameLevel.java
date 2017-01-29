@@ -3,13 +3,15 @@ package game.platform;
 import game.objects.*;
 import java.util.ArrayList;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.paint.Color;
 
 public class GameLevel
 {
+    public static GameLevel CURRENT_LEVEL;
+    
     private Scene scene;
     private Player player;
     private ArrayList<NPC> npcs;
