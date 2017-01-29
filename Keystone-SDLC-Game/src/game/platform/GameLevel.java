@@ -16,6 +16,8 @@ public class GameLevel
     private Image bgImage;
     private int messageCounter =0;
     private ArrayList<String> input;
+    // messages should probably be stored in arrays and assigned to indviual npcs 
+    private ArrayList<Message> level1Messages;
     
     /**
      * Builds a new level
@@ -50,7 +52,12 @@ public class GameLevel
         player.move(input);
         player.update();
         player.draw(brush);
-                    
+        
+        ProgressBar bar=new ProgressBar();
+        // just a quick fix maybe it makes more sense to use enums or have some sort of static message counter that increments when a new message object is created???
+        // cant get follow up dialog working with same key system must be spamming it too fast
+        // cant get it to add to progressbar for some reason?
+        // messagecounter is in place so it you were hitting the same key over for additonal dialog you could have more then 2 states
         for(NPC npc : npcs)
         {
             if (player.intersects(npc)&&(input.contains("ENTER"))&&(messageCounter==0))
@@ -60,11 +67,17 @@ public class GameLevel
             if(!player.intersects(npc))
             {
                 messageCounter=0;
+                npc.getMessage().setText("press 1 for 1 point, 2 for 2, 3 to lose a point and 4 to lose 2");
             }
             if (messageCounter==1)
             {    
                 npc.getMessage().draw(brush);
-            }    
+            }
+            npc.getMessage().dialogOptions(input,"DIGIT1", "this should give you one point", messageCounter, bar, 1);
+            npc.getMessage().dialogOptions(input,"DIGIT2", "this should give you two points", messageCounter, bar, 2);
+            npc.getMessage().dialogOptions(input,"DIGIT3", "this should lose you one point", messageCounter, bar, -1);
+            npc.getMessage().dialogOptions(input,"DIGIT4", "this should lose you two points", messageCounter, bar, -2);
+            npc.getMessage().dialogOptions(input,"SPACE",bar.toString() , messageCounter, bar, 0);           
         }
     }
     

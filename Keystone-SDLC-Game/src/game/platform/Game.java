@@ -3,6 +3,7 @@ package game.platform;
 import game.objects.Message;
 import game.objects.NPC;
 import game.objects.Player;
+import game.objects.ProgressBar;
 import java.util.ArrayList;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -46,6 +47,8 @@ public class Game extends Application
         mainStage.setTitle("Keystone SDLC 2D Game");
         
         GraphicsContext brush = canvas.getGraphicsContext2D();
+        
+        ProgressBar bar=new ProgressBar();
         
         // start of game loop logic
         AnimationTimer gameLoop = new AnimationTimer()
@@ -91,7 +94,7 @@ public class Game extends Application
         Image bgImage = new Image("images/office-bg1.jpg");
         
         NPC npc1 = new NPC(235, 225, Color.BLUE,
-                new Message("this is a simple test to show how text boxes work."));
+                new Message("press 1 for 1 point, 2 for 2, 3 to lose a point and 4 to lose 2"));
         npcs.add(npc1);
         
         return new GameLevel(scene, player, npcs, bgImage);

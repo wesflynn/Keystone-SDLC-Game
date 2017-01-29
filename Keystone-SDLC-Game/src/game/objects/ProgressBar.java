@@ -26,5 +26,21 @@ public class ProgressBar implements Drawable
     {
         
     }
+
+    public void addProgress(int progress) {
+        this.progress += progress;
+    }
+    public void removeProgress(int progress) {
+        this.progress -= progress;
+    }    
+
+    public int getProgress() {
+        return progress;
+    }
+
+    @Override
+    public String toString() {
+        return "ProgressBar{" + "progress=" + this.progress + '}';
+    }
     
 }
