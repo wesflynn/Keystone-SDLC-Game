@@ -14,7 +14,7 @@ public class GameLevel
     private Player player;
     private ArrayList<NPC> npcs;
     private Image bgImage;
-    
+    private int messageCounter =0;
     private ArrayList<String> input;
     
     /**
@@ -31,6 +31,7 @@ public class GameLevel
         this.player = player;
         this.npcs = npcs;
         this.bgImage = background;
+        
         
         input = GameLevel.getInput(scene);
     }
@@ -52,10 +53,18 @@ public class GameLevel
                     
         for(NPC npc : npcs)
         {
-            if (player.intersects(npc))
+            if (player.intersects(npc)&&(input.contains("ENTER"))&&(messageCounter==0))
             {
-                npc.getMessage().draw(brush);
+                messageCounter++; 
             }
+            if(!player.intersects(npc))
+            {
+                messageCounter=0;
+            }
+            if (messageCounter==1)
+            {    
+                npc.getMessage().draw(brush);
+            }    
         }
     }
     
