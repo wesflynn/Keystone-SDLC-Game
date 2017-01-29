@@ -12,11 +12,19 @@ import javafx.scene.paint.Color;
  */
 public abstract class Character implements Drawable
 {
-    public final double WIDTH = 50;
-    public final double HEIGHT = 50;
+    private final double WIDTH = 50;
+    private final double HEIGHT = 50;
+    
     // Global private variables
     public double posX, posY;
     private Color color;
+    
+    public Character(double x, double y, Color color)
+    {
+        this.setPositionX(x);
+        this.setPositionY(y);
+        this.setColor(color);
+    }
     
     // Accessors
     public final double getWidth()
@@ -45,33 +53,39 @@ public abstract class Character implements Drawable
     }
     
     // Mutators
-    public void setPosX(double x)
+    public final void setPositionX(double x)
     {
         this.posX = x;
     }
     
-    public void setPosY(double y)
+    public final void setPositionY(double y)
     {
         this.posY = y;
     }
     
-    public void setColor(Color color)
+    public final void setColor(Color color)
     {
         this.color = color;
     }
     
     @Override
-    public void draw(GraphicsContext brush) {
+    public void draw(GraphicsContext brush)
+    {
         brush.setFill(color);
         brush.fillOval(posX, posY, WIDTH, HEIGHT);
+        
         brush.setStroke(Color.BLACK);
         brush.strokeOval(posX, posY, WIDTH, HEIGHT);
     }
     
     public Rectangle2D getBoundary()
     {
-        //couldnt get return methods to work so had to make vars public
         // adding extra to the height and width allows a buffer zone between player and npc
-        return new Rectangle2D.Double(posX,posY,WIDTH+5,HEIGHT+5);
+        double buffer = 5;
+        
+        return new Rectangle2D.Double(this.getPosX(),
+                this.getPosY(),
+                WIDTH + buffer,
+                HEIGHT + buffer);
     }
 }

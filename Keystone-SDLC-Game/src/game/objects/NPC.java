@@ -10,11 +10,9 @@ public class NPC extends Character
     private static long counter = 1L;
     private final long ID = counter;
     
-    public NPC(int posX , int posY , Color color)
+    public NPC(double x, double y, Color color)
     {
-        super.setPosX(posX);
-        super.setPosY(posY);
-        super.setColor(color);
+        super(x, y, color);
         counter++;
     }
     /*
@@ -38,10 +36,8 @@ public class NPC extends Character
     }
     */
     @Override
-    public void update(double time)
+    public void update()
     {
         
     }
-
-    
 }

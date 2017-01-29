@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -23,7 +22,6 @@ public class Game extends Application
 {
     final private double DEFAULT_WIDTH = 800;
     final private double DEFAULT_HEIGHT = 780;
-    long then = System.nanoTime();;
     /**
      * @param args the command line arguments
      */
@@ -47,19 +45,6 @@ public class Game extends Application
         mainStage.setTitle("Keystone SDLC 2D Game");
         
         GraphicsContext brush = canvas.getGraphicsContext2D();
-        
-        ArrayList<String> input = new ArrayList<>();
-                    
-        scene.setOnKeyPressed((KeyEvent e) -> {
-            String code = e.getCode().toString();
-            if ( !input.contains(code) )
-                input.add( code );
-        });
-
-        scene.setOnKeyReleased((KeyEvent e) -> {
-            String code = e.getCode().toString();
-            input.remove( code );
-        });
                    
         // update and draw these things can likley be moved to game level class later
         Image bgImage = new Image("images/office-bg1.jpg");
@@ -73,18 +58,13 @@ public class Game extends Application
         // start of game loop logic
         AnimationTimer gameLoop = new AnimationTimer() {
             
+            ArrayList<String> input = GameLevel.getInput(scene);
+            
+            long then = System.nanoTime();
             @Override
-            public void handle(long currentNanoTime)
-            {
-                // calculate time since last update.
-                double elapsedTime = (currentNanoTime - then) / 1000000000.0;
-                then = currentNanoTime;
-                
-                //couldn't figure out how to make game loop work using previous logic so i commented it out
-//            @Override
-//            public void handle(long now) {
-//                if(now - then > 1000000) {
-//                    then = now;
+            public void handle(long now) {
+                if(now - then > 1000000) {
+                    then = now;
                     
                     // Reset Canvas
                     this.resetCanvas(brush);
@@ -94,15 +74,18 @@ public class Game extends Application
 
                     // player movement
                     player.move(input);
-                    player.update(elapsedTime);
+                    player.update();
                     player.draw(brush);
                     //can move drawing npc out of the loop after just put in here for test purposes
                     npc.draw(brush);
                     
                     //just for testing purposes
-                    if (player.intersects(player, npc))
-                        test.draw(brush);      
+                    if (player.intersects(npc))
+                    {
+                        test.draw(brush);
+                    }
                 }
+            }
 
             public void resetCanvas(GraphicsContext brush) {
                 brush.setFill(Color.BLACK);

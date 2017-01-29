@@ -8,68 +8,103 @@ import javafx.scene.paint.Color;
  * 
  * @author adamb
  */
-public class Player extends Character
+public final class Player extends Character
 {
     /*
     TODO:
         - expanded hitbox (bigger then npc or player objects, possibly getboundy +50 pixels or something?)
         - interaction (add conditional key pressed plus collision detection to trigger event, like bringing up message window)
     */
+    private static final double DEAFULT_POS_X = 250;
+    private static final double DEFAULT_POS_Y = 530;
+    
+    private static final double SPEED = 2;
+    
+    private static final Color DEFAULT_COLOR = Color.RED;
+    
     private double velocityX;
     private double velocityY;
-    private final double DEAFULT_POS_X = 250;
-    private final double DEFAULT_POS_Y = 530;
-    private final Color DEFAULT_COLOR = Color.RED;
     
-    public Player() {
-        super.setPosX(this.DEAFULT_POS_X);
-        super.setPosY(this.DEFAULT_POS_Y);
-        super.setColor(this.DEFAULT_COLOR);
-        velocityX = 0;
-        velocityY = 0;
+    public Player()
+    {
+        super(Player.DEAFULT_POS_X,
+                Player.DEFAULT_POS_Y,
+                Player.DEFAULT_COLOR);
+        
+        this.setVelocityX(0);
+        this.setVelocityY(0);
     }
 
     @Override
-    public void update(double time)
+    public void update()
     {
-        posX += velocityX * time;
-        posY += velocityY * time;
+        posX += velocityX;
+        posY += velocityY;
     }
-//  controls the player movement
+    
+    /**
+     * Controls the player's movement
+     * 
+     * @param input 
+     */
     public void move(ArrayList<String> input)
     {
-        setVelocity(0,0);
-        if(input.contains("UP"))
-            addVelocity(0,-100);
-        if(input.contains("LEFT"))
-            addVelocity(-100,0);    
-        if(input.contains("RIGHT"))
-            addVelocity(100,0);    
-        if(input.contains("DOWN"))
-            addVelocity(0,100);
+        if(input.contains("RIGHT")
+                && !input.contains("LEFT"))
+        {
+            this.setVelocityX(SPEED);
+        }
+        else if(!input.contains("RIGHT")
+                && input.contains("LEFT"))
+        {
+            this.setVelocityX(-SPEED);
+        }
+        else if(!input.contains("RIGHT")
+                && !input.contains("LEFT"))
+        {
+            this.setVelocityX(0);
+        }
+        
+        if(input.contains("UP")
+                && !input.contains("DOWN"))
+        {
+            this.setVelocityY(-SPEED);
+        }   
+        else if(!input.contains("UP")
+                && input.contains("DOWN"))
+        {
+            this.setVelocityY(SPEED);
+        }
+        else if(!input.contains("UP")
+                && !input.contains("DOWN"))
+        {
+            this.setVelocityY(0);
+        }
     }
     
-    public void setPosition(double x, double y)
+    private double getVelocityX()
     {
-        super.setPosX(x);
-        super.setPosY(y);
+        return this.velocityX;
+    }
+    
+    private double getVelocityY()
+    {
+        return this.velocityY;
     }
 
-    public void setVelocity(double x, double y)
+    private void setVelocityX(double velocity)
     {
-        velocityX = x;
-        velocityY = y;
+        velocityX = velocity;
     }
     
-    public void addVelocity(double x, double y)
+    private void setVelocityY(double velocity)
     {
-        velocityX += x;
-        velocityY += y;
+        this.velocityY = velocity;
     }
         
-    public boolean intersects(Player p,NPC npc)
+    public boolean intersects(NPC npc)
     {
-        return p.getBoundary().intersects( npc.getBoundary() );
+        return this.getBoundary().intersects( npc.getBoundary() );
     }
     
 }
