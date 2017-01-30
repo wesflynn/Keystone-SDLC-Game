@@ -11,7 +11,6 @@ public class ProgressBar implements Drawable
 {
     private int progress;
     private int barChange=200;
-    
     public ProgressBar()
     {
         this.progress=5;
@@ -35,7 +34,7 @@ public class ProgressBar implements Drawable
             // or create a var to store the position of the last one then add barchange to that
             barChange +=40;
         }
-
+        barChange=200;
         brush.setStroke(Color.BLACK);
         brush.strokeRect(200, 100, 400, 20);        
     }
