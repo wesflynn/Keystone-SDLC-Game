@@ -36,7 +36,7 @@ public class GameLevel
         
         this.bar = new ProgressBar();
         
-        input = GameLevel.getInput(scene);
+        input = GameLevel.getInput(this.scene);
     }
     
     public void updateAndDraw(GraphicsContext brush)
@@ -54,6 +54,29 @@ public class GameLevel
         
         // read input for player movement
         player.move(input);
+        
+        // check for collision with edge of screen
+        if(player.getPosX() - Player.SPEED <= 0
+                && player.getVelocityX() < 0)
+        {
+            player.setVelocityX(0);
+        }
+        else if(player.getPosX() + player.getWidth() + Player.SPEED > Game.DEFAULT_WIDTH
+                && player.getVelocityX() > 0)
+        {
+            player.setVelocityX(0);
+        }
+        
+        if(player.getPosY() - Player.SPEED <= 0
+                && player.getVelocityY() < 0)
+        {
+            player.setVelocityY(0);
+        }
+        else if(player.getPosY() + player.getHeight() + Player.SPEED > Game.DEFAULT_HEIGHT
+                && player.getVelocityY() > 0)
+        {
+            player.setVelocityY(0);
+        }
         
         // update and draw player
         player.update();

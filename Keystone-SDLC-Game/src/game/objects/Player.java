@@ -18,7 +18,7 @@ public final class Player extends Character
     private static final double DEAFULT_POS_X = 250;
     private static final double DEFAULT_POS_Y = 530;
     
-    private static final double SPEED = 4;
+    public static final double SPEED = 4;
     
     private static final Color DEFAULT_COLOR = Color.RED;
     
@@ -38,8 +38,8 @@ public final class Player extends Character
     @Override
     public void update()
     {
-        posX += velocityX;
-        posY += velocityY;
+        this.setPositionX(this.getPosX() + this.getVelocityX());
+        this.setPositionY(this.getPosY() + this.getVelocityY());
     }
     
     /**
@@ -82,22 +82,22 @@ public final class Player extends Character
         }
     }
     
-    private double getVelocityX()
+    public double getVelocityX()
     {
         return this.velocityX;
     }
     
-    private double getVelocityY()
+    public double getVelocityY()
     {
         return this.velocityY;
     }
 
-    private void setVelocityX(double velocity)
+    public void setVelocityX(double velocity)
     {
         velocityX = velocity;
     }
     
-    private void setVelocityY(double velocity)
+    public void setVelocityY(double velocity)
     {
         this.velocityY = velocity;
     }

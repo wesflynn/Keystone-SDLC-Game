@@ -22,8 +22,8 @@ import javafx.stage.Stage;
  */
 public class Game extends Application
 {
-    final private double DEFAULT_WIDTH = 800;
-    final private double DEFAULT_HEIGHT = 780;
+    public static final double DEFAULT_WIDTH = 800;
+    public static final double DEFAULT_HEIGHT = 780;
     /**
      * @param args the command line arguments
      */
@@ -90,7 +90,6 @@ public class Game extends Application
     private static GameLevel buildTestLevel(Scene scene)
     {
         Player player = new Player();
-        ProgressBar bar=new ProgressBar();
         ArrayList<NPC> npcs = new ArrayList<>();
         Image bgImage = new Image("images/office-bg1.jpg");
         

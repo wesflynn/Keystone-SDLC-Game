@@ -16,7 +16,7 @@ public abstract class Character implements Drawable
     private final double HEIGHT = 50;
     
     // Global private variables
-    public double posX, posY;
+    private double posX, posY;
     private Color color;
     
     public Character(double x, double y, Color color)
