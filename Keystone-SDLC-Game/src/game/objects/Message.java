@@ -75,8 +75,9 @@ public class Message implements Drawable
     {
         if ((input.contains(key))&&(messageCounter==1))
             {
+                // this logic is broken needs better way to handle points
                setText(message);
-               if (bar.getProgress()<10)
+               if (bar.getProgress()<11)
                 bar.addProgress(points);
                else
                    bar.setProgress(10);

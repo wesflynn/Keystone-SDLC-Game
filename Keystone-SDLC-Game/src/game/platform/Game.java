@@ -59,7 +59,7 @@ public class Game extends Application
             {
                 // Sleep for at least 1000000 nanoseconds
                 //               a.k.a 1/1000th of a second
-                if(now - then > 1000000)
+                if(now - then > 50000000)
                 {
                     then = now;
                     
