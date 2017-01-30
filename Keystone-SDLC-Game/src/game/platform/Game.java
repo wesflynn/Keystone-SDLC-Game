@@ -94,6 +94,7 @@ public class Game extends Application
         ArrayList<NPC> npcs = new ArrayList<>();
         Image bgImage = new Image("images/office-bg1.jpg");
         
+        // Build NPC 1
         Message npc1Question = new Message("press 1 for 1 point, 2 for 2, 3 to lose a point and 4 to lose 2");
         String[] npc1Answers = {
             "this should give you one point",
@@ -110,8 +111,9 @@ public class Game extends Application
         
         NPC npc1 = new NPC(235, 225, Color.BLUE,
                 npc1Question, npc1Answers, npc1Responses);
-        npcs.add(npc1);
         
+        
+        // Build NPC 2
         Message npc2Question = new Message("press 1 for 1 point, 2 for 3, 3 to lose a point and 4 to lose 3");
         String[] npc2Answers = {
             "this should give you one point",
@@ -128,6 +130,9 @@ public class Game extends Application
         
         NPC npc2 = new NPC(485, 575, Color.GREEN,
                 npc2Question, npc2Answers, npc2Responses);
+        
+        // Add npcs to array list
+        npcs.add(npc1);
         npcs.add(npc2);
         
         return new GameLevel(scene, player, npcs, bgImage);
