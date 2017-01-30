@@ -30,10 +30,12 @@ public class ProgressBar implements Drawable
         {
             brush.setFill(Color.RED);
             brush.fillRect(barChange, 100, 40, 20);
+            // this probably only works for adding to the bar in its current state
+            // maybe use itorater or arraylist to handle adding and removing these instead
+            // or create a var to store the position of the last one then add barchange to that
             barChange +=40;
         }
-        
-        
+
         brush.setStroke(Color.BLACK);
         brush.strokeRect(200, 100, 400, 20);        
     }

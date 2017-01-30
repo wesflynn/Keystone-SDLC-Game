@@ -48,7 +48,6 @@ public class Game extends Application
         
         GraphicsContext brush = canvas.getGraphicsContext2D();
         
-        
         // start of game loop logic
         AnimationTimer gameLoop = new AnimationTimer()
         {

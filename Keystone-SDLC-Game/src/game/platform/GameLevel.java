@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.paint.Color;
 
 public class GameLevel
 {
@@ -18,7 +17,6 @@ public class GameLevel
     private int messageCounter =0;
     private ArrayList<String> input;
     // messages should probably be stored in arrays and assigned to indviual npcs 
-    private ArrayList<Message> level1Messages;
     
     /**
      * Builds a new level
@@ -55,7 +53,6 @@ public class GameLevel
         player.update();
         player.draw(brush);
         
-//        ProgressBar bar=new ProgressBar();
         bar.update();
         bar.draw(brush);
         // just a quick fix maybe it makes more sense to use enums or have some sort of static message counter that increments when a new message object is created???

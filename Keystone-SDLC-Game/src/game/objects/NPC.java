@@ -1,5 +1,6 @@
 package game.objects;
 
+import java.util.ArrayList;
 import javafx.scene.paint.Color;
 
 /**
@@ -9,6 +10,8 @@ public class NPC extends Character
 {
     private static long counter = 1L;
     private final long ID = counter;
+    // since each npc has more then one message maybe we should put them in array then pass them into the construtor?
+    private ArrayList<Message> messageArray;
     
     private Message message;
     

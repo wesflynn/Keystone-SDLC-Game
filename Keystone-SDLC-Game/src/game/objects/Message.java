@@ -68,9 +68,7 @@ public class Message implements Drawable
         brush.fillText(this.getText(),
                 this.POS_X + 20,
                 this.POS_Y + 20);
-        // add something to create additonal dialouge or change dialouge to options
-        
-        
+
     }
     
     public void dialogOptions(ArrayList<String> input,String key,String message,int messageCounter,ProgressBar bar,int points)
