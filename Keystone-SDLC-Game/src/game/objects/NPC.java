@@ -14,6 +14,10 @@ public class NPC extends Character
     private final String[] answers;
     private final Message[] responses;
     
+    private boolean questionListener = true;
+    private boolean answerListener = false;
+    private int currentMessage = 0;
+    
     public NPC(double x, double y, Color color,
             Message question, String[] answers, Message[] responses)
     {
@@ -52,5 +56,35 @@ public class NPC extends Character
     public Message[] getResponses()
     {
         return this.responses;
+    }
+    
+    public boolean getQuestionListener()
+    {
+        return this.questionListener;
+    }
+    
+    public boolean getAnswerListener()
+    {
+        return this.answerListener;
+    }
+    
+    public int getCurrentMessage()
+    {
+        return this.currentMessage;
+    }
+    
+    public void setQuestionListener(boolean listener)
+    {
+        this.questionListener = listener;
+    }
+    
+    public void setAnswerListener(boolean listener)
+    {
+        this.answerListener = listener;
+    }
+    
+    public void setCurrentMessage(int i)
+    {
+        this.currentMessage = i;
     }
 }

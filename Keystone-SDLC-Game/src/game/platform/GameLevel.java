@@ -19,9 +19,6 @@ public class GameLevel
     private final Image bgImage;
     private final ArrayList<String> input;
     
-    private boolean questionListener = true;
-    private int currentMessage = 0;
-    
     /**
      * Builds a new level
      * 
@@ -63,54 +60,74 @@ public class GameLevel
         
         for(NPC npc : npcs)
         {
-            if (player.intersects(npc)
-                    && (input.contains("ENTER")) 
-                    && questionListener)
+            if(this.player.intersects(npc))
             {
-                questionListener = false;
-                this.currentMessage = 0;
+                if (npc.getQuestionListener())
+                {
+                    if(input.contains("ENTER"))
+                    {
+                        npc.setQuestionListener(false);
+                        npc.setAnswerListener(true);
+                    }
+                    else
+                    {
+                        //show enter message
+                    }
+                }
+
+                if(!npc.getQuestionListener())
+                {
+                    switch(npc.getCurrentMessage())
+                    {
+                        case 0:
+                            npc.getQuestion().draw(brush);
+                            break;
+                        case 1:
+                            npc.getResponses()[0].draw(brush);
+                            break;
+                        case 2:
+                            npc.getResponses()[1].draw(brush);
+                            break;
+                        case 3:
+                            npc.getResponses()[2].draw(brush);
+                            break;
+                        case 4:
+                            npc.getResponses()[3].draw(brush);
+                            break;
+                    }
+                }
+
+                if(input.contains("DIGIT1") && npc.getAnswerListener())
+                {
+                    npc.setAnswerListener(false);
+                    npc.setCurrentMessage(1);
+                    this.bar.addProgress(npc.getResponses()[npc.getCurrentMessage()-1].getPoints());
+                }
+                else if(input.contains("DIGIT2") && npc.getAnswerListener())
+                {
+                    npc.setAnswerListener(false);
+                    npc.setCurrentMessage(2);
+                    this.bar.addProgress(npc.getResponses()[npc.getCurrentMessage()-1].getPoints());
+                }
+                else if(input.contains("DIGIT3") && npc.getAnswerListener())
+                {
+                    npc.setAnswerListener(false);
+                    npc.setCurrentMessage(3);
+                    this.bar.addProgress(npc.getResponses()[npc.getCurrentMessage()-1].getPoints());
+                }   
+                else if(input.contains("DIGIT4") && npc.getAnswerListener())
+                {
+                    npc.setAnswerListener(false);
+                    npc.setCurrentMessage(4);
+                    this.bar.addProgress(npc.getResponses()[npc.getCurrentMessage()-1].getPoints());
+                }
             }
-            if(!player.intersects(npc))
+            else
             {
-                questionListener = true;
-                this.currentMessage = -1;
+                npc.setAnswerListener(false);
+                npc.setQuestionListener(true);
+                npc.setCurrentMessage(0);
             }
-            
-            if(input.contains("DIGIT1"))
-            {
-                this.currentMessage = 1;
-            }
-            else if(input.contains("DIGIT2"))
-            {
-                this.currentMessage = 2;
-            }
-            else if(input.contains("DIGIT3"))
-            {
-                this.currentMessage = 3;
-            }   
-            else if(input.contains("DIGIT4"))
-            {
-                this.currentMessage = 4;
-            }
-            
-            switch(currentMessage)
-            {
-                case 0:
-                    npc.getQuestion().draw(brush);
-                    break;
-                case 1:
-                    npc.getResponses()[0].draw(brush);
-                    break;
-                case 2:
-                    npc.getResponses()[1].draw(brush);
-                    break;
-                case 3:
-                    npc.getResponses()[2].draw(brush);
-                    break;
-                case 4:
-                    npc.getResponses()[3].draw(brush);
-                    break;
-            }    
         }
     }
     

@@ -18,7 +18,7 @@ public final class Player extends Character
     private static final double DEAFULT_POS_X = 250;
     private static final double DEFAULT_POS_Y = 530;
     
-    private static final double SPEED = 6;
+    private static final double SPEED = 4;
     
     private static final Color DEFAULT_COLOR = Color.RED;
     

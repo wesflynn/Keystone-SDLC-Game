@@ -10,7 +10,8 @@ import javafx.scene.paint.Color;
 public class ProgressBar implements Drawable
 {
     private int progress;
-    private int barChange=200;
+    private int barChange = 200;
+    
     public ProgressBar()
     {
         this.progress=5;
@@ -25,6 +26,8 @@ public class ProgressBar implements Drawable
     @Override
     public void draw(GraphicsContext brush)
     {
+        brush.setFill(Color.BLACK);
+        brush.fillRect(200, 100, 400, 20);
         for (int i = 0;i<this.progress;i++)
         {
             brush.setFill(Color.RED);
@@ -36,26 +39,31 @@ public class ProgressBar implements Drawable
         }
         barChange=200;
         brush.setStroke(Color.BLACK);
-        brush.strokeRect(200, 100, 400, 20);        
+        brush.strokeRect(200, 100, 400, 20);
     }
 
-    public void addProgress(int progress) {
+    public void addProgress(int progress)
+    {
         this.progress += progress;
     }
-    public void removeProgress(int progress) {
+    public void removeProgress(int progress)
+    {
         this.progress -= progress;
     }    
 
-    public int getProgress() {
+    public int getProgress()
+    {
         return progress;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "ProgressBar{" + "progress=" + this.progress + '}';
     }
 
-    public void setProgress(int progress) {
+    public void setProgress(int progress)
+    {
         this.progress = progress;
     }
     

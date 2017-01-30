@@ -26,10 +26,18 @@ public class Message implements Drawable
     private final Color BORDER_COLOR = Color.WHITE;
     
     private String text;
+    private int points;
     
     public Message(String text)
     {
-      this.text=text;
+      this.text = text;
+      this.points = 0;
+    }
+    
+    public Message(String text, int points)
+    {
+        this.text = text;
+        this.points = points;
     }
     
     @Override
@@ -41,6 +49,11 @@ public class Message implements Drawable
     public String getText()
     {
         return this.text;
+    }
+    
+    public int getPoints()
+    {
+        return this.points;
     }
     
     public void setText(String text)

@@ -94,23 +94,41 @@ public class Game extends Application
         ArrayList<NPC> npcs = new ArrayList<>();
         Image bgImage = new Image("images/office-bg1.jpg");
         
-        Message question = new Message("press 1 for 1 point, 2 for 2, 3 to lose a point and 4 to lose 2");
-        String[] answers = {
+        Message npc1Question = new Message("press 1 for 1 point, 2 for 2, 3 to lose a point and 4 to lose 2");
+        String[] npc1Answers = {
             "this should give you one point",
             "this should give you two points",
             "this should lose you one point",
             "this should lose you two points"
         };
-        Message[] responses = {
-            new Message("1p"),
-            new Message("2p"),
-            new Message("-1p"),
-            new Message("-2p")
+        Message[] npc1Responses = {
+            new Message("1p", 1),
+            new Message("2p", 2),
+            new Message("-1p", -1),
+            new Message("-2p", -2)
         };
         
         NPC npc1 = new NPC(235, 225, Color.BLUE,
-                question, answers, responses);
+                npc1Question, npc1Answers, npc1Responses);
         npcs.add(npc1);
+        
+        Message npc2Question = new Message("press 1 for 1 point, 2 for 3, 3 to lose a point and 4 to lose 3");
+        String[] npc2Answers = {
+            "this should give you one point",
+            "this should give you three points",
+            "this should lose you one point",
+            "this should lose you three points"
+        };
+        Message[] npc2Responses = {
+            new Message("1p", 1),
+            new Message("3p", 3),
+            new Message("-1p", -1),
+            new Message("-3p", -3)
+        };
+        
+        NPC npc2 = new NPC(485, 575, Color.GREEN,
+                npc2Question, npc2Answers, npc2Responses);
+        npcs.add(npc2);
         
         return new GameLevel(scene, player, npcs, bgImage);
     }
