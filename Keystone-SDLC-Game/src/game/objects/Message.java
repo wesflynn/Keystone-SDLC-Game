@@ -78,7 +78,10 @@ public class Message implements Drawable
         if ((input.contains(key))&&(messageCounter==1))
             {
                setText(message);
-               bar.addProgress(points);
+               if (bar.getProgress()<10)
+                bar.addProgress(points);
+               else
+                   bar.setProgress(10);
             }   
     }
     

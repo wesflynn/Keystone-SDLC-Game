@@ -12,6 +12,7 @@ public class GameLevel
 {
     private Scene scene;
     private Player player;
+    private ProgressBar bar;
     private ArrayList<NPC> npcs;
     private Image bgImage;
     private int messageCounter =0;
@@ -27,13 +28,13 @@ public class GameLevel
      * @param npcs array list of npc characters in level
      * @param background image of level background
      */
-    public GameLevel(Scene scene, Player player, ArrayList<NPC> npcs, Image background)
+    public GameLevel(Scene scene, Player player, ArrayList<NPC> npcs, Image background,ProgressBar bar)
     {
         this.scene = scene;
         this.player = player;
         this.npcs = npcs;
         this.bgImage = background;
-        
+        this.bar = bar;
         
         input = GameLevel.getInput(scene);
     }
@@ -54,7 +55,7 @@ public class GameLevel
         player.update();
         player.draw(brush);
         
-        ProgressBar bar=new ProgressBar();
+//        ProgressBar bar=new ProgressBar();
         bar.update();
         bar.draw(brush);
         // just a quick fix maybe it makes more sense to use enums or have some sort of static message counter that increments when a new message object is created???

@@ -53,6 +53,10 @@ public class ProgressBar implements Drawable
     public String toString() {
         return "ProgressBar{" + "progress=" + this.progress + '}';
     }
+
+    public void setProgress(int progress) {
+        this.progress = progress;
+    }
     
     
 }

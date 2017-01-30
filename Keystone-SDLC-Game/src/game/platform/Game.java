@@ -48,7 +48,6 @@ public class Game extends Application
         
         GraphicsContext brush = canvas.getGraphicsContext2D();
         
-        ProgressBar bar=new ProgressBar();
         
         // start of game loop logic
         AnimationTimer gameLoop = new AnimationTimer()
@@ -90,6 +89,7 @@ public class Game extends Application
     private static GameLevel buildLevel1(Scene scene)
     {
         Player player = new Player();
+        ProgressBar bar=new ProgressBar();
         ArrayList<NPC> npcs = new ArrayList<>();
         Image bgImage = new Image("images/office-bg1.jpg");
         
@@ -97,6 +97,6 @@ public class Game extends Application
                 new Message("press 1 for 1 point, 2 for 2, 3 to lose a point and 4 to lose 2"));
         npcs.add(npc1);
         
-        return new GameLevel(scene, player, npcs, bgImage);
+        return new GameLevel(scene, player, npcs, bgImage,bar);
     }
 }
