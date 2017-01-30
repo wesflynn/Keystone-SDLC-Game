@@ -44,6 +44,7 @@ public class GameLevel
         //  draw background
         brush.drawImage(bgImage, 0, 0);
         
+        // update and draw npcs
         for(NPC npc : npcs)
         {
             npc.update();
@@ -51,17 +52,24 @@ public class GameLevel
             
         }
         
+        // read input for player movement
         player.move(input);
+        
+        // update and draw player
         player.update();
         player.draw(brush);
         
+        // update and draw progress bar
         bar.update();
         bar.draw(brush);
         
+        // interpret message for any npc close to player
+        // and show
         for(NPC npc : npcs)
         {
             if(this.player.intersects(npc))
             {
+                // tell the player to hit enter when near a player
                 if (npc.getQuestionListener())
                 {
                     if(input.contains("ENTER"))
@@ -75,13 +83,17 @@ public class GameLevel
                     }
                 }
 
+                // show appropriate message
                 if(!npc.getQuestionListener())
                 {
                     switch(npc.getCurrentMessage())
                     {
+                        // Show question message
                         case 0:
                             npc.getQuestion().draw(brush);
                             break;
+                            
+                        // Show appropriate answer message
                         case 1:
                             npc.getResponses()[0].draw(brush);
                             break;
@@ -97,6 +109,7 @@ public class GameLevel
                     }
                 }
 
+                // Read input if none have been recieved
                 if(input.contains("DIGIT1") && npc.getAnswerListener())
                 {
                     npc.setAnswerListener(false);
@@ -122,6 +135,7 @@ public class GameLevel
                     this.bar.addProgress(npc.getResponses()[npc.getCurrentMessage()-1].getPoints());
                 }
             }
+            //if not near npc, reset vars
             else
             {
                 npc.setAnswerListener(false);
