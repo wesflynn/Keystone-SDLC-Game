@@ -77,6 +77,7 @@ public class GameLevel
             npc.getMessage().dialogOptions(input,"DIGIT2", "this should give you two points", messageCounter, bar, 2);
             npc.getMessage().dialogOptions(input,"DIGIT3", "this should lose you one point", messageCounter, bar, -1);
             npc.getMessage().dialogOptions(input,"DIGIT4", "this should lose you two points", messageCounter, bar, -2);
+            // this last one is here to check if the point system is working properly
             npc.getMessage().dialogOptions(input,"SPACE",bar.toString() , messageCounter, bar, 0);           
         }
     }
