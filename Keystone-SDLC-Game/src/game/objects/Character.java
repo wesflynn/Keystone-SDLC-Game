@@ -81,7 +81,7 @@ public abstract class Character implements Drawable
     public Rectangle2D getBoundary()
     {
         // adding extra to the height and width allows a buffer zone between player and npc
-        double buffer = 5;
+        double buffer = 15;
         
         return new Rectangle2D.Double(this.getPosX(),
                 this.getPosY(),

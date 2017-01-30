@@ -12,12 +12,15 @@ public class GameLevel
 {
     public static GameLevel CURRENT_LEVEL;
     
-    private Scene scene;
-    private Player player;
-    private ArrayList<NPC> npcs;
-    private Image bgImage;
+    private final Scene scene;
+    private final Player player;
+    private final ProgressBar bar;
+    private final ArrayList<NPC> npcs;
+    private final Image bgImage;
+    private final ArrayList<String> input;
     
-    private ArrayList<String> input;
+    private boolean questionListener = true;
+    private int currentMessage = 0;
     
     /**
      * Builds a new level
@@ -34,6 +37,8 @@ public class GameLevel
         this.npcs = npcs;
         this.bgImage = background;
         
+        this.bar = new ProgressBar();
+        
         input = GameLevel.getInput(scene);
     }
     
@@ -46,18 +51,66 @@ public class GameLevel
         {
             npc.update();
             npc.draw(brush);
+            
         }
         
         player.move(input);
         player.update();
         player.draw(brush);
-                    
+        
+        bar.update();
+        bar.draw(brush);
+        
         for(NPC npc : npcs)
         {
-            if (player.intersects(npc))
+            if (player.intersects(npc)
+                    && (input.contains("ENTER")) 
+                    && questionListener)
             {
-                npc.getMessage().draw(brush);
+                questionListener = false;
+                this.currentMessage = 0;
             }
+            if(!player.intersects(npc))
+            {
+                questionListener = true;
+                this.currentMessage = -1;
+            }
+            
+            if(input.contains("DIGIT1"))
+            {
+                this.currentMessage = 1;
+            }
+            else if(input.contains("DIGIT2"))
+            {
+                this.currentMessage = 2;
+            }
+            else if(input.contains("DIGIT3"))
+            {
+                this.currentMessage = 3;
+            }   
+            else if(input.contains("DIGIT4"))
+            {
+                this.currentMessage = 4;
+            }
+            
+            switch(currentMessage)
+            {
+                case 0:
+                    npc.getQuestion().draw(brush);
+                    break;
+                case 1:
+                    npc.getResponses()[0].draw(brush);
+                    break;
+                case 2:
+                    npc.getResponses()[1].draw(brush);
+                    break;
+                case 3:
+                    npc.getResponses()[2].draw(brush);
+                    break;
+                case 4:
+                    npc.getResponses()[3].draw(brush);
+                    break;
+            }    
         }
     }
     

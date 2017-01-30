@@ -3,6 +3,7 @@ package game.platform;
 import game.objects.Message;
 import game.objects.NPC;
 import game.objects.Player;
+import game.objects.ProgressBar;
 import java.util.ArrayList;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -60,7 +61,7 @@ public class Game extends Application
                 GameLevel.CURRENT_LEVEL = testLevel;
                 // Sleep for at least 1000000 nanoseconds
                 //               a.k.a 1/1000th of a second
-                if(now - then > 1000000)
+                if(now - then > 10000000)
                 {
                     then = now;
                     GameLevel currentLevel = GameLevel.CURRENT_LEVEL;
@@ -89,11 +90,26 @@ public class Game extends Application
     private static GameLevel buildTestLevel(Scene scene)
     {
         Player player = new Player();
+        ProgressBar bar=new ProgressBar();
         ArrayList<NPC> npcs = new ArrayList<>();
         Image bgImage = new Image("images/office-bg1.jpg");
         
+        Message question = new Message("press 1 for 1 point, 2 for 2, 3 to lose a point and 4 to lose 2");
+        String[] answers = {
+            "this should give you one point",
+            "this should give you two points",
+            "this should lose you one point",
+            "this should lose you two points"
+        };
+        Message[] responses = {
+            new Message("1p"),
+            new Message("2p"),
+            new Message("-1p"),
+            new Message("-2p")
+        };
+        
         NPC npc1 = new NPC(235, 225, Color.BLUE,
-                new Message("this is a simple test to show how text boxes work."));
+                question, answers, responses);
         npcs.add(npc1);
         
         return new GameLevel(scene, player, npcs, bgImage);

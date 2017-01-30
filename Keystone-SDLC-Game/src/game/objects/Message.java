@@ -6,6 +6,7 @@
 package game.objects;
 
 import game.platform.Drawable;
+import java.util.ArrayList;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
@@ -50,7 +51,7 @@ public class Message implements Drawable
     @Override
     public void update()
     {
-        //TODO: Implement method
+        //TODO: Implement 
     }
 
     @Override
@@ -67,6 +68,21 @@ public class Message implements Drawable
         brush.fillText(this.getText(),
                 this.POS_X + 20,
                 this.POS_Y + 20);
+
+    }
+    
+    public void dialogOptions(ArrayList<String> input,String key,String message,int messageCounter,ProgressBar bar,int points)
+    {
+        if ((input.contains(key))&&(messageCounter==1))
+            {
+               setText(message);
+               if (bar.getProgress()<11)
+                bar.addProgress(points);
+               if (bar.getProgress()>=11)
+                   bar.setProgress(10);
+               if (bar.getProgress()<=0)
+                   bar.setProgress(0);
+            }   
     }
     
 }
