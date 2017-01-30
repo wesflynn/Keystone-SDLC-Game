@@ -47,6 +47,7 @@ public class GameLevel
         {
             npc.update();
             npc.draw(brush);
+            
         }
         
         player.move(input);
@@ -54,6 +55,7 @@ public class GameLevel
         player.draw(brush);
         
         ProgressBar bar=new ProgressBar();
+        bar.draw(brush);
         // just a quick fix maybe it makes more sense to use enums or have some sort of static message counter that increments when a new message object is created???
         // cant get follow up dialog working with same key system must be spamming it too fast
         // cant get it to add to progressbar for some reason?
