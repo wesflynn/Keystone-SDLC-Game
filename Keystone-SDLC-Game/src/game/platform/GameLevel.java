@@ -57,8 +57,8 @@ public class GameLevel
         bar.draw(brush);
         // just a quick fix maybe it makes more sense to use enums or have some sort of static message counter that increments when a new message object is created???
         // cant get follow up dialog working with same key system must be spamming it too fast
-        // cant get it to add to progressbar for some reason?
         // messagecounter is in place so it you were hitting the same key over for additonal dialog you could have more then 2 states
+        // the problem is likley that the if statements are evaluating to true over and over since this is in the game loop
         for(NPC npc : npcs)
         {
             if (player.intersects(npc)&&(input.contains("ENTER"))&&(messageCounter==0))

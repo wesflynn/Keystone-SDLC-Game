@@ -51,7 +51,6 @@ public class Game extends Application
         // start of game loop logic
         AnimationTimer gameLoop = new AnimationTimer()
         {
-            
             GameLevel testLevel = Game.buildLevel1(scene);
             
             long then = System.nanoTime();
