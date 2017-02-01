@@ -3,7 +3,6 @@ package game.platform;
 import game.objects.*;
 import java.util.ArrayList;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
@@ -90,7 +89,13 @@ public class GameLevel
         // and show
         for(NPC npc : npcs)
         {
-            if(this.player.intersects(npc))
+            this.handleInteraction(brush, npc);
+        }
+    }
+    
+    private void handleInteraction(GraphicsContext brush, NPC npc)
+    {
+        if(this.player.intersects(npc))
             {
                 // tell the player to hit enter when near a player
                 if (npc.getQuestionListener())
@@ -98,7 +103,8 @@ public class GameLevel
                     if(input.contains("ENTER"))
                     {
                         npc.setQuestionListener(false);
-                        npc.setAnswerListener(true);
+                        npc.setNextListener(true);
+                        npc.setBackListener(true);
                     }
                     else
                     {
@@ -157,6 +163,25 @@ public class GameLevel
                     npc.setCurrentMessage(4);
                     this.bar.addProgress(npc.getResponses()[npc.getCurrentMessage()-1].getPoints());
                 }
+                
+                if(input.contains("ENTER") && npc.getNextListener())
+                {
+                    npc.setNextListener(false);
+                    System.out.println("Enter!");
+                }
+                else if(!input.contains("ENTER") && !npc.getNextListener())
+                {
+                    npc.setNextListener(true);
+                }
+                else if(input.contains("BACK_SPACE") && npc.getBackListener())
+                {
+                    npc.setBackListener(false);
+                    System.out.println("Backspace!");
+                }
+                else if(!input.contains("BACK_SPACE") && !npc.getBackListener())
+                {
+                    npc.setBackListener(true);
+                }
             }
             //if not near npc, reset vars
             else
@@ -165,7 +190,6 @@ public class GameLevel
                 npc.setQuestionListener(true);
                 npc.setCurrentMessage(0);
             }
-        }
     }
     
     private static ArrayList<String> getInput(Scene scene)
@@ -178,6 +202,7 @@ public class GameLevel
             if (!input.contains(code))
             {
                 input.add(code);
+                
             }
         });
 

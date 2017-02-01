@@ -15,6 +15,8 @@ public class NPC extends Character
     private final Message[] responses;
     
     private boolean questionListener = true;
+    private boolean nextListener = false;
+    private boolean backListener = false;
     private boolean answerListener = false;
     private int currentMessage = 0;
     
@@ -63,6 +65,16 @@ public class NPC extends Character
         return this.questionListener;
     }
     
+    public boolean getNextListener()
+    {
+        return this.nextListener;
+    }
+    
+    public boolean getBackListener()
+    {
+        return this.backListener;
+    }
+    
     public boolean getAnswerListener()
     {
         return this.answerListener;
@@ -76,6 +88,16 @@ public class NPC extends Character
     public void setQuestionListener(boolean listener)
     {
         this.questionListener = listener;
+    }
+    
+    public void setNextListener(boolean listener)
+    {
+        this.nextListener = listener;
+    }
+    
+    public void setBackListener(boolean listener)
+    {
+        this.backListener = listener;
     }
     
     public void setAnswerListener(boolean listener)

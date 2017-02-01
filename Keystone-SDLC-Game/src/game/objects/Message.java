@@ -28,6 +28,9 @@ public class Message implements Drawable
     private String text;
     private int points;
     
+    private boolean hasPages = false;
+    private ArrayList<String> pages;
+    
     public Message(String text)
     {
       this(text, 0);
@@ -55,9 +58,25 @@ public class Message implements Drawable
         return this.points;
     }
     
+    public boolean hasPages()
+    {
+        return this.hasPages;
+    }
+    
+    public ArrayList<String> getPages()
+    {
+        return this.pages;
+    }
+    
     public void setText(String text)
     {
         this.text = text;
+    }
+    
+    public void setPages(ArrayList<String> pages)
+    {
+        this.pages = pages;
+        this.hasPages = true;
     }
 
     @Override
