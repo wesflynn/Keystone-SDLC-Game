@@ -103,6 +103,7 @@ public class GameLevel
                     if(input.contains("ENTER"))
                     {
                         npc.setQuestionListener(false);
+                        npc.setAnswerListener(true);
                         npc.setNextListener(true);
                         npc.setBackListener(true);
                     }
