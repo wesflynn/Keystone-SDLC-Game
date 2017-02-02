@@ -25,7 +25,7 @@ in terms of what to create for the future.
 		can work with both iPhone and Android is a good move to make.  
 
 	Small bad 
-		- The team has suggested that we just buy a bunch of fake iphones from 
+		- The team has suggested that we just buy a bunch of fake iPhones from 
 		the Chinese market and rebrand them and translate them into English. 
 
 	Big good 
@@ -147,7 +147,19 @@ is needed before we can proceed with peace of mind.
 
 
 - Define System Requirements 
-So I was looking over all the requirements that this thing is going to need and I think 
+So I was looking over all the requirements that this thing is going to need and I think we are going to need to consider what will be the main functions of the prototype?
+
+	small good
+	 - Get a list of ideas for the main functions and go through and define with your 	workers what functions will be in the prototype
+
+	small bad
+	- You hand pick functions that you want to be in the prototype 
+
+	big good 
+	- Converse with your work team and decide which flaws and talents the crew has to 	decide what will be the main functions of the prototype.
+
+	big bad
+	- Make sure that the prototype has just enough for it to be alright
 
 
 
@@ -192,6 +204,7 @@ System Design
 - Design Solution based on requirements 
 
 
+
 - Design application architecture / network 
 
 
@@ -213,7 +226,14 @@ System Design
 System Implementations
 
 - Verify and Test
+Yo Boss, Jermey is testing the prototype out and says that it keeps leaving rashes, what should you propose we do?
 
+	small good - get Jermey to go to the doctor and investigate the prototype with another tester
+	small bad - Fire Jermey for not being able to test your unique product
+	
+	best good - Send Jermey home, investigate the prototype and consider changing the material of band used on the product.
+
+	Very Bad - Its going to be fine. 
 
 
 -Convert Data 
@@ -235,6 +255,18 @@ System and Security
 
 
 - Enhance the System
+Boss, how should we go about making the security for our prototype? Should we go high or low?
+small good - go high, make sure none of those people get in our systems.
+good - go high, we need to prevent hackers and other sites from building there own programs to modify the software we have already built inside the device for the customer.
+small bad - go high, just be cheap about it
+bad - Do we really need security for a watch? 
 
 
-- Support the users 
+- Support the users
+What should we do to help the users once we ship the product out?
+small good - Include a phone/email for users to contact us on
+small bad - Just stick it in small fine print in the instructions, make it a game for them.
+good - Create a hotline for users to call in complaints and questions about the product and an online email address where you can communicate with users as well as social media
+
+bad - Honestly? It should be so simple to handle. If they don’t know how to do it from the start how can they turn on their tv for crying out loud. 
+ 
