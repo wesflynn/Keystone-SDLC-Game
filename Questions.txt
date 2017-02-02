@@ -40,19 +40,19 @@ in terms of what to create for the future.
 - Resource Plan 
 I know the company has given you a monumental task to come up with something to save the 
 company. But we need to distribute our resources appropriately in order to increase 
-efficency 
+efficiency. 
 
 	Small good
 		- You look at previous jobs that your team members have done and their job
 		within the project and assign roles based on that. 
 	Small bad
-		- Since the project is in its early phase it doesnt really matter who works
+		- Since the project is in its early phase it doesn’t really matter who works
 		on what so let every pick the job they want to have no matter what their skills
 		are in that area.  
 
 	Big good
 		- You ask all your employees to list what skills they have and send them to
-		you. You look at the skills and jobs ahead and asign an employee to each one. 
+		you. You look at the skills and jobs ahead and assign an employee to each one. 
 	Big bad
 		- Stressed with the task that you face, you decided that you should let
 		fate decided who does what. You write the jobs on a piece of paper and 
@@ -62,7 +62,7 @@ efficency
 
 
 - Budget 
-The company doesn't really have a blank check to give us for this project, infact I don't
+The company doesn't really have a blank check to give us for this project, in fact I don't
 think they have any cheques left to right, but they did give us a chance to write a proposal
 to say how much we need. 
 
@@ -87,7 +87,7 @@ to say how much we need.
 - Schedule 
 I hear the company is in a tight spot right now and can't afford any delays or we are all
 out of a job. We should probably set some time lines so that we can get this product to 
-markey. 
+market. 
 
 	Small good
 		- You set sprints and smaller due dates to get the project on track.
@@ -102,17 +102,17 @@ markey.
 		schedule for the project. 
 
 	Big bad
-		- As project lead you dont think that a time line would solve anything.
+		- As project lead you don’t think that a time line would solve anything.
 		Its going to get done when it gets done. Let the team be free and work at 
 		liesure. 
 
 
-- Feasibilty 
+- Feasibility 
 I have doubts that this product is going to be feasible on the market and think that we should 
 have another look at just exactly we are trying to do.  
 
 	Small good
-		- Reassure him that the team has been hand picked and 
+		 - Reassure him that the team has been hand picked and that we need to support our team as much 			as we can.
 		
 	small bad
 		-Ignore the complaint and tell the employee that if they speak out again they
@@ -126,7 +126,7 @@ have another look at just exactly we are trying to do.
 	big bad	
 		- You think that anything can be done you ignore the complaint and proceed
 		to tell the employee about a more grand idea that is completely beyond the 
-		realm of possiblity. 
+		realm of possibility. 
 
 Systems Analysis 
 
@@ -156,18 +156,32 @@ Boss, I think that we need a prototype of this product to ensure user compatibil
 functionality. How complex should we make this thing. 
 
 	small good
+	- Reassure that as long as we push out a working and non bug filled product at launch it will do well on 		the market.
 
 	small bad
-
+	
 	big good
-
+	- Look back on the plans of the original design and develop the original then consider small things to add 		into the design once the main product is working well and will appeal to the customers.
 	big bad
-
+	- Put loads of miniature add ons on the product, working or not, as long as it catches the customers eye. 		We will be sure to get them to purchase the product. 
 
 
 - Prioritize Requirements 
+Boss, we are falling behind on schedule and we won’t be able to push out on some of the watches features. What should we do?
+
+	small good
+	-Perfect the features we have on the watch and scrap the other features.
 
 
+	small bad
+	- Move on from the applications you’ve almost finished and start the main focus on the other applications.
+
+
+	big good
+	- Polish the features we have done. We will guarantee a line up after launch of applications that will be 		free to the public once released.
+
+	big bad
+	- Skip to the features we need to finish, the consumers will enjoy more things to do when the watch finally 		launches. 
 
 - Generate and Evaluate Alternatives 
 
