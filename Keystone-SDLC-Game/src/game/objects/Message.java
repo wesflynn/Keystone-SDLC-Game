@@ -9,6 +9,7 @@ import game.platform.Drawable;
 import java.util.ArrayList;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
 /**
  *
@@ -21,25 +22,62 @@ public class Message implements Drawable
     private final double HEIGHT = 200;
     private final double WIDTH = 500;
     
+    private final int LINE_WIDTH = 64; //monospaced characters
+    
     private final Color TEXT_COLOR = Color.WHITE;
     private final Color BACKGROUND_COLOR = Color.BLACK;
     private final Color BORDER_COLOR = Color.WHITE;
     
-    private String text;
-    private int points;
-    
-    private boolean hasPages = false;
     private ArrayList<String> pages;
+    private int currentPage = 0;
     
-    public Message(String text)
-    {
-      this(text, 0);
-    }
+    private String[] answers;
+    private ArrayList<String> responses;
+    private int[] points;
     
-    public Message(String text, int points)
+    public Message(String question, String[] answers, ArrayList<String> responses, int[] points)
     {
-        this.text = text;
+        this.answers = answers;
+        this.responses = responses;
         this.points = points;
+        
+        this.pages = new ArrayList();
+        
+        String tempStr = question;
+        int lineCount = 0;
+        String currPage = "";
+        while(tempStr.length() > 0)
+        {
+            System.out.println("Linecount:" + lineCount);
+            if(lineCount < 11)
+            {
+                System.out.println("tempStr len:" + tempStr.length());
+                if(tempStr.length() > 64)
+                {
+                    int tempInt = tempStr.lastIndexOf(" ", LINE_WIDTH);
+                    currPage += tempStr.substring(0, tempInt) + "\n";
+                    tempStr = tempStr.substring(tempInt);
+                }
+                else
+                {
+                    currPage += tempStr;
+                    tempStr = "";
+                }
+                lineCount++;
+            }
+            else
+            {
+                pages.add(currPage);
+                currPage = "";
+                lineCount = 0;
+            }
+        }
+        pages.add(currPage);
+        
+        for(String pg : pages)
+        {
+            System.out.println("-------------\n" + pg + "\n-------------");
+        }
     }
     
     @Override
@@ -50,17 +88,12 @@ public class Message implements Drawable
     
     public String getText()
     {
-        return this.text;
+        return this.getPages().get(currentPage);
     }
     
-    public int getPoints()
+    public int[] getPoints()
     {
         return this.points;
-    }
-    
-    public boolean hasPages()
-    {
-        return this.hasPages;
     }
     
     public ArrayList<String> getPages()
@@ -68,15 +101,35 @@ public class Message implements Drawable
         return this.pages;
     }
     
-    public void setText(String text)
+    public int getPage()
     {
-        this.text = text;
+        return this.currentPage;
     }
     
-    public void setPages(ArrayList<String> pages)
+    public String getResponse(int i)
     {
-        this.pages = pages;
-        this.hasPages = true;
+        return this.responses.get(i);
+    }
+    
+    public int getPoints(int i)
+    {
+        return this.points[i];
+    }
+    
+    public void addText(String txt)
+    {
+        this.getPages().add(txt);
+        currentPage = this.getPages().indexOf(txt);
+    }
+    
+    public void setText(String txt)
+    {
+        this.pages.set(this.currentPage, txt);
+    }
+    
+    public void setPage(int i)
+    {
+        this.currentPage = i;
     }
 
     @Override
@@ -95,7 +148,6 @@ public class Message implements Drawable
         brush.strokeRect(this.POS_X, this.POS_Y, this.WIDTH, this.HEIGHT);
         
         brush.setFill(this.TEXT_COLOR);
-        // there is another text option which has max coordinates this may be useful for making text stay in box.
         brush.fillText(this.getText(),
                 this.POS_X + 20,
                 this.POS_Y + 20);

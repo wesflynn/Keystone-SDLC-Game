@@ -1,9 +1,6 @@
 package game.platform;
 
-import game.objects.Message;
-import game.objects.NPC;
-import game.objects.Player;
-import game.objects.ProgressBar;
+//import predefinded libs
 import java.util.ArrayList;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -14,6 +11,10 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+//import custom libs
+import game.objects.*;
+import javafx.scene.text.Font;
 
 /**
  * main class. Builds and runs the game.
@@ -47,6 +48,9 @@ public class Game extends Application
         mainStage.setTitle("Keystone SDLC 2D Game");
         
         GraphicsContext brush = canvas.getGraphicsContext2D();
+        brush.setFont(
+                new Font(brush.getFont().getSize()).font("monospaced")
+        );
         
         // start of game loop logic
         AnimationTimer gameLoop = new AnimationTimer()
@@ -64,13 +68,12 @@ public class Game extends Application
                 if(now - then > 10000000)
                 {
                     then = now;
-                    GameLevel currentLevel = GameLevel.CURRENT_LEVEL;
                     
                     // Reset Canvas
                     this.resetCanvas(brush);
                     
                     // Update and Draw level
-                    currentLevel.updateAndDraw(brush);
+                    GameLevel.CURRENT_LEVEL.updateAndDraw(brush);
                 }
             }
 
@@ -94,46 +97,63 @@ public class Game extends Application
         Image bgImage = new Image("images/office-bg1.jpg");
         
         // Build NPC 1
-        Message npc1Question = new Message("press 1 for 1 point, 2 for 2, 3 to lose a point and 4 to lose 2");
         String[] npc1Answers = {
-            "this should give you one point",
-            "this should give you two points",
-            "this should lose you one point",
-            "this should lose you two points"
+            "this should give you one point", //1
+            "this should give you two points", //2
+            "this should lose you one point", //3
+            "this should lose you two points" //4
         };
-        Message[] npc1Responses = {
-            new Message("1p", 1),
-            new Message("2p", 2),
-            new Message("-1p", -1),
-            new Message("-2p", -2)
+        ArrayList<String> npc1Responses = new ArrayList()
+        {{
+            add("1p");
+            add("2p");
+            add("-1p");
+            add("-2p");
+        }};
+        int[] npc1Points = {
+            1, 2, -1, -2
         };
+        Message npc1Question = new Message("1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n\nhit enter....", npc1Answers, npc1Responses, npc1Points);
         
         NPC npc1 = new NPC(235, 225, Color.BLUE,
-                npc1Question, npc1Answers, npc1Responses);
+                npc1Question);
         
         
         // Build NPC 2
-        Message npc2Question = new Message("press 1 for 1 point, 2 for 3, 3 to lose a point and 4 to lose 3");
         String[] npc2Answers = {
-            "this should give you one point",
-            "this should give you three points",
-            "this should lose you one point",
-            "this should lose you three points"
+            "this should give you one point", //1
+            "this should give you two points", //2
+            "this should lose you one point", //3
+            "this should lose you two points" //4
         };
-        Message[] npc2Responses = {
-            new Message("1p", 1),
-            new Message("3p", 3),
-            new Message("-1p", -1),
-            new Message("-3p", -3)
+        ArrayList<String> npc2Responses = new ArrayList()
+        {{
+            add("1p");
+            add("2p");
+            add("-1p");
+            add("-2p");
+        }};
+        int[] npc2Points = {
+            1, 2, -1, -2
         };
+        Message npc2Question = new Message("Sed tempus ullamcorper velit at porta. Donec venenatis laoreet sapien, a pharetra orci ornare condimentum. Nulla nec nisl sed risus tempus porta vel vitae tortor. Etiam eget nulla orci. Vivamus semper, metus vitae pretium aliquet, risus erat condimentum turpis, non porta ligula ligula gravida dui. Aliquam interdum quis ligula vitae blandit. Maecenas id quam dignissim, malesuada justo quis, eleifend augue. Quisque ut malesuada nibh. Maecenas bibendum, enim et rutrum tincidunt, nisl enim posuere quam, ac ullamcorper felis ante vel velit. In sagittis et tellus ac aliquet. Cras eget egestas elit. Aenean sollicitudin mi quis leo finibus aliquam. Sed dictum, quam et interdum posuere, purus elit gravida dolor, nec laoreet nibh velit et odio. Proin nec orci sed felis maximus laoreet. Quisque hendrerit, nisl non posuere interdum, lorem velit elementum nulla, vel bibendum ex metus in urna. Pellentesque eleifend condimentum tellus, nec aliquet nisl consectetur convallis.", npc2Answers, npc2Responses, npc2Points);
         
         NPC npc2 = new NPC(485, 575, Color.GREEN,
-                npc2Question, npc2Answers, npc2Responses);
+                npc2Question);
         
         // Add npcs to array list
         npcs.add(npc1);
         npcs.add(npc2);
         
         return new GameLevel(scene, player, npcs, bgImage);
+    }
+    
+    private static GameLevel level2(Scene scene)
+    {
+        
+        
+        
+        //temp
+        return null;
     }
 }
