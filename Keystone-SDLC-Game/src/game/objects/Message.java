@@ -22,7 +22,7 @@ public class Message implements Drawable
     private final double HEIGHT = 200;
     private final double WIDTH = 500;
     
-    private final int LINE_WIDTH = 64; //monospaced characters
+    private final int LINE_WIDTH = 49; //monospaced characters
     
     private final Color TEXT_COLOR = Color.WHITE;
     private final Color BACKGROUND_COLOR = Color.BLACK;
@@ -49,10 +49,42 @@ public class Message implements Drawable
         while(tempStr.length() > 0)
         {
             System.out.println("Linecount:" + lineCount);
-            if(lineCount < 11)
+            if(lineCount < 8)
             {
                 System.out.println("tempStr len:" + tempStr.length());
-                if(tempStr.length() > 64)
+                if(tempStr.length() > LINE_WIDTH)
+                {
+                    int tempInt = tempStr.lastIndexOf(" ", LINE_WIDTH);
+                    currPage += tempStr.substring(0, tempInt) + "\n";
+                    tempStr = tempStr.substring(tempInt+1);
+                }
+                else
+                {
+                    currPage += tempStr;
+                    for(int i = 0; i < 8-lineCount; i++)
+                    {
+                        currPage += "\n";
+                    }
+                    currPage += "\n          Press [ENTER] to continue...";
+                    tempStr = "";
+                }
+                lineCount++;
+            }
+            else
+            {
+                pages.add(currPage + "\n          Press [ENTER] to continue...");
+                currPage = "";
+                lineCount = 0;
+            }
+        }
+        pages.add(currPage);
+        currPage = "";
+        for(int i = 0; i < answers.length; i++)
+        {
+            tempStr = (i+1) + ". " + answers[i];
+            while(tempStr.length() > 0)
+            {
+                if(tempStr.length() > LINE_WIDTH)
                 {
                     int tempInt = tempStr.lastIndexOf(" ", LINE_WIDTH);
                     currPage += tempStr.substring(0, tempInt) + "\n";
@@ -60,16 +92,9 @@ public class Message implements Drawable
                 }
                 else
                 {
-                    currPage += tempStr;
+                    currPage += tempStr + "\n";
                     tempStr = "";
                 }
-                lineCount++;
-            }
-            else
-            {
-                pages.add(currPage);
-                currPage = "";
-                lineCount = 0;
             }
         }
         pages.add(currPage);
@@ -130,6 +155,21 @@ public class Message implements Drawable
     public void setPage(int i)
     {
         this.currentPage = i;
+    }
+    
+    public void showQuestion()
+    {
+        for(int i = 0; i < responses.size(); i++)
+        {
+            this.pages.remove(responses.get(i));
+        }
+        this.setPage(0);
+    }
+    
+    public void showResponse(int i)
+    {
+        this.pages.add(this.responses.get(i));
+        this.currentPage = this.pages.size() - 1;
     }
 
     @Override

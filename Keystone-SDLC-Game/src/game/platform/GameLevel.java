@@ -120,36 +120,43 @@ public class GameLevel
                 }
                 
                 // Read input if none have been recieved
-                if(input.contains("DIGIT1") && npc.getAnswerListener())
+                if(npc.getQuestion().getPage() == npc.getQuestion().getPages().size() - 1)
                 {
-                    npc.setAnswerListener(false);
-                    npc.getQuestion().setText(npc.getQuestion().getResponse(0));
-                    this.bar.addProgress(npc.getQuestion().getPoints(0));
-                }
-                else if(input.contains("DIGIT2") && npc.getAnswerListener())
-                {
-                    npc.setAnswerListener(false);
-                    npc.getQuestion().setText(npc.getQuestion().getResponse(1));
-                    this.bar.addProgress(npc.getQuestion().getPoints(1));
-                }
-                else if(input.contains("DIGIT3") && npc.getAnswerListener())
-                {
-                    npc.setAnswerListener(false);
-                    npc.getQuestion().setText(npc.getQuestion().getResponse(2));
-                    this.bar.addProgress(npc.getQuestion().getPoints(2));
-                }   
-                else if(input.contains("DIGIT4") && npc.getAnswerListener())
-                {
-                    npc.setAnswerListener(false);
-                    npc.getQuestion().setText(npc.getQuestion().getResponse(3));
-                    this.bar.addProgress(npc.getQuestion().getPoints(3));
+                    if(input.contains("DIGIT1") && npc.getAnswerListener())
+                    {
+                        npc.setAnswerListener(false);
+                        npc.getQuestion().showResponse(0);
+                        this.bar.addProgress(npc.getQuestion().getPoints(0));
+                    }
+                    else if(input.contains("DIGIT2") && npc.getAnswerListener())
+                    {
+                        npc.setAnswerListener(false);
+                        npc.getQuestion().showResponse(1);
+                        this.bar.addProgress(npc.getQuestion().getPoints(1));
+                    }
+                    else if(input.contains("DIGIT3") && npc.getAnswerListener())
+                    {
+                        npc.setAnswerListener(false);
+                        npc.getQuestion().showResponse(2);
+                        this.bar.addProgress(npc.getQuestion().getPoints(2));
+                    }   
+                    else if(input.contains("DIGIT4") && npc.getAnswerListener())
+                    {
+                        npc.setAnswerListener(false);
+                        npc.getQuestion().showResponse(3);
+                        this.bar.addProgress(npc.getQuestion().getPoints(3));
+                    }
                 }
                 
                 if(!npc.firstEnter && input.contains("ENTER") && npc.getNextListener())
                 {
                     npc.setNextListener(false);
                     System.out.println("Enter!");
-                    npc.getQuestion().setPage(npc.getQuestion().getPage()+1);
+                    
+                    if(npc.getQuestion().getPage() < npc.getQuestion().getPages().size() - 1)
+                    {
+                        npc.getQuestion().setPage(npc.getQuestion().getPage()+1);
+                    }
                 }
                 else if(!input.contains("ENTER") && !npc.getNextListener())
                 {
@@ -159,7 +166,11 @@ public class GameLevel
                 {
                     npc.setBackListener(false);
                     System.out.println("Backspace!");
-                    npc.getQuestion().setPage(npc.getQuestion().getPage()-1);
+                    
+                    if(npc.getQuestion().getPage() > 0 && npc.getAnswerListener())
+                    {
+                        npc.getQuestion().setPage(npc.getQuestion().getPage()-1);
+                    }
                 }
                 else if(!input.contains("BACK_SPACE") && !npc.getBackListener())
                 {
@@ -175,9 +186,10 @@ public class GameLevel
             //if not near npc, reset vars
             else
             {
+                npc.firstEnter = true;
                 npc.setAnswerListener(false);
                 npc.setQuestionListener(true);
-                npc.setCurrentMessage(0);
+                npc.getQuestion().showQuestion();
             }
     }
     
