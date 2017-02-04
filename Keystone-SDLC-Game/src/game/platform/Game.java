@@ -113,7 +113,7 @@ public class Game extends Application
         int[] npc1Points = {
             1, 2, -1, -2
         };
-        Message npc1Question = new Message("1\n2\n3\n4\n5\n6\n7\n8\n\nhit enter....", npc1Answers, npc1Responses, npc1Points);
+        Message npc1Question = new Message("This is a fake test question. Use ENTER to go forward a page. BACKSPACE to go back a page. and numbers 1 through 4 to answer questions.", npc1Answers, npc1Responses, npc1Points);
         
         NPC npc1 = new NPC(235, 225, Color.BLUE,
                 npc1Question);
