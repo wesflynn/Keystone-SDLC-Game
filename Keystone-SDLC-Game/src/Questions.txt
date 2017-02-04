@@ -1,0 +1,325 @@
+You work for a failing company that has not produced the best results for the shareholders
+over the last couple years. As the pressure mounts the bosses get more and more desperate
+in order to have a profitable quarter.
+As project lead, the company has tasked you with creating the newest technology.
+The company has also gone ahead and hand picked a team for you with the "best of the best".
+
+Talk to your team members and search the area to solve the problems and push your tech onto
+the market. 
+Based on the Software Development Life Cycle choose the best responses for the problems given.
+  
+
+
+System Planning 
+
+- Define the Problem
+
+Without giving you the details the company expects a lot from you, only telling you that they
+"Want a new idea that will bring profit and secure for the company" The problem you are 
+facing seems to be quite vague. The team has met and conversed and come up with a few ideas
+in terms of what to create for the future. 
+
+	Small good 
+		- People from the team have become increasing interested in wearable tech,
+		with team members purchasing iPhone watches. Perhaps creating a watch that 
+		can work with both iPhone and Android is a good move to make.  
+
+	Small bad 
+		- The team has suggested that we just buy a bunch of fake iPhones from 
+		the Chinese market and rebrand them and translate them into English. 
+
+	Big good 
+		- 
+
+	Big Bad
+		-A member of the team remembers reading something about nanotechnology and 
+		cybernetic bodily enhancements. He thinks that pushing an untested and 
+		slightly dangerous technology is a ballsy move that could push the company
+		into the future.   
+
+- Resource Plan 
+I know the company has given you a monumental task to come up with something to save the 
+company. But we need to distribute our resources appropriately in order to increase 
+efficiency. 
+
+	Small good
+		- You look at previous jobs that your team members have done and their job
+		within the project and assign roles based on that. 
+	Small bad
+		- Since the project is in its early phase it doesn’t really matter who works
+		on what so let every pick the job they want to have no matter what their skills
+		are in that area.  
+
+	Big good
+		- You ask all your employees to list what skills they have and send them to
+		you. You look at the skills and jobs ahead and assign an employee to each one. 
+	Big bad
+		- Stressed with the task that you face, you decided that you should let
+		fate decided who does what. You write the jobs on a piece of paper and 
+		the names of all your employees on the other. You close your eyes and 
+		at random point to a name and job. 
+
+
+
+- Budget 
+The company doesn't really have a blank check to give us for this project, in fact I don't
+think they have any cheques left to right, but they did give us a chance to write a proposal
+to say how much we need. 
+
+	Small good
+		- You think that in a crunch the team could pull it off with a conservative
+		budget, but this also leaves room for you to go over budget. 
+	Small bad
+		- You decide to calculate the value of each team members life savings based 
+		on nothing but pure speculation. You add it together, put a zero on the end
+		and send the boss an email saying "We need this amount of money". 
+	Big Good
+		- Bring the team together and ask them based on their skills what they think 
+		the budget should be, both with R&D, building and production. Giving you
+		the best possible chance to stay within budget.  
+	
+	Big Bad
+		- Ditch every idea you have had so far and go with the cybernetic bodily 
+		enhancements and ask the company for nothing short of a fortune to get
+		it off the ground. 
+
+
+- Schedule 
+I hear the company is in a tight spot right now and can't afford any delays or we are all
+out of a job. We should probably set some time lines so that we can get this product to 
+market. 
+
+	Small good
+		- You set sprints and smaller due dates to get the project on track.
+
+	Small bad
+		- You send an end date in the future and tell the team the project must be 
+		done by that date, keeping the team on a tight leash 
+
+	Big Good
+		- Each team member has to report on how much time they think is required 
+		for each section of the project. Based on the teams report you create the 
+		schedule for the project. 
+
+	Big bad
+		- As project lead you don’t think that a time line would solve anything.
+		Its going to get done when it gets done. Let the team be free and work at 
+		liesure. 
+
+
+- Feasibility 
+I have doubts that this product is going to be feasible on the market and think that we should 
+have another look at just exactly we are trying to do.  
+
+	Small good
+		 - Reassure him that the team has been hand picked and that we need to support our team as much 			as we can.
+		
+	small bad
+		-Ignore the complaint and tell the employee that if they speak out again they
+		will be off the project.
+
+	big good
+		- Within the group you decide to have a debate and appoint the employee who
+		had the concern to the "con" side and have someone else appointed to the
+		"pro" side. 
+
+	big bad	
+		- You think that anything can be done you ignore the complaint and proceed
+		to tell the employee about a more grand idea that is completely beyond the 
+		realm of possibility. 
+
+Systems Analysis 
+
+- Gather Information
+I think that this is a good idea what we are trying to do, but I think that more information 
+is needed before we can proceed with peace of mind. 
+
+	small good
+		- On your own time research a few things and apply them to the project.
+	small bad
+		- Wikipedia is a reliable resource, check there for any information you need 
+	big good
+		- Based on the skills on your employees, assign a member to do research based
+		on the missing information your team needs.
+	big bad
+		- Check to see if there is a Reddit page about it, if not create one, and 
+		proceed to start the discussion.
+
+
+- Define System Requirements 
+So I was looking over all the requirements that this thing is going to need and I think we are going to need to consider what will be the main functions of the prototype?
+
+	small good
+	 - Get a list of ideas for the main functions and go through and define with your workers what functions will be in the prototype
+
+	small bad
+	- You hand pick functions that you want to be in the prototype 
+
+	big good 
+	- Converse with your work team and decide which flaws and talents the crew has to decide what will be the main functions of the prototype.
+
+	big bad
+	- Make sure that the prototype has just enough for it to be alright
+
+
+
+- Build Prototypes 
+Boss, I think that we need a prototype of this product to ensure user compatibility and 
+functionality. How complex should we make this thing. 
+
+	small good
+	- Reassure that as long as we push out a working and non bug filled product at launch it will do well on the market.
+
+	small bad
+	- Build the design based on time requirements and leave it as is, its only a prototpye anyway. 
+
+	big good
+	- Look back on the plans of the original design and develop the original then consider small things to add into the design once the main product is working well and will appeal to the customers.
+	big bad
+	- Put loads of miniature add ons on the product, working or not, as long as it catches the customers eye. We will be sure to get them to purchase the product. 
+
+
+- Prioritize Requirements 
+Boss, we are falling behind on schedule and we won’t be able to push out on some of the products features. What should we do?
+
+	small good
+	-Perfect the features we have on the products and scrap the other features.
+
+
+	small bad
+	- Move on from the applications you’ve almost finished and start the main focus on the other applications.
+
+
+	big good
+	- Polish the features we have done. We will guarantee a line up after launch of applications that will be free to the public once released.
+
+	big bad
+	- Skip to the features we need to finish, the consumers will enjoy more things to do when the watch finally launches. 
+
+- Generate and Evaluate Alternatives 
+The product is good and the prototypes should work out well, I dont really have any doubts but I think some people in the office dont feel the same way. 
+
+	small good - come up with a basic back up plan that involves building another prototype if needed
+	small bad - just make a quick change that hardly does anything different
+	big good - gather the team and talk about an alternative that could be made in cause the original design is not quite as expected
+	big bad - Scrap the entire project and redo everything based on the fact that its not perfect it right away 
+
+
+System Design 
+
+- Design Solution based on requirements 
+The design specs have come back from our test group how do you want to proceed with the graphical interface?
+
+	small good - use the specs as a guideline to create the design
+	small bad - tell the graphic designer to just "run with it" based on the idea of the product 
+	big good - use the specs as a frame work to build upon leaving room for particular design changes based on testing
+	big bad - the design for the product came to you in a dream and youre sure itll be a hit even though its already been done before 
+
+
+- Design application architecture / network 
+I have a great idea for the product to be able to connect to the internet like all other devices are now adays but it might take a little while for me to impliment it 
+	small good - Go for it, but if it starts to take too long we need to abandon it 
+	small bad - connecting to the internet is good, but we cant go for it now since its not in the design plan
+	big good - Do it, Ill get someone to help you on it so we can get that idea off the ground 
+	big bad - connecting to the internet is overrated 
+
+
+- Design user interface 
+We have created a UI for the product but we have some user complaints and issues how should we proceed?
+	small good - take the complaints and find the valid ones to change the system
+	small bad - pick and choose the easy ones to fix 
+	big good - use the complaints to launch version 2.0 of the user interface 
+	big bad - ignore the complaints and base the UI on what needs to be done
+
+
+- design system interfaces 
+We have a system inferface designer thats out on vacation for a couple weeks but we really need for him to fix this problem what do you want us to do?
+
+	small good - email him and ask, hopefully he answers
+	small bad - make the change yourself 
+	big good - gather the team working on the system interface design and work up a solution together 
+	big bad - leave it, and potentially put the project a couple weeks behind 
+
+- Design and integrate DataBase 
+You are trying to create a database to store users information and you have estimated the number of users you will have and the amount of data you need to store
+	small good - choice a database that can scale but is ultimately restricted in the end 
+	small bad - leave the database design to a third party, but that would mean you need to warn the users that a third party would have access to their info, which might make some users decline to use your product
+	big good - find a database that can scale to your needs and protects users personal information	
+	big bad - keep with the estimate, you figure that the product wont end up being that successful anyway
+
+- Design system controls 
+
+
+
+System Implementations
+
+- Verify and Test
+Yo Boss, Jermey is testing the prototype out and says that it keeps hurting his eyes, what do you propose we do?
+
+	small good - get Jermey to go to the doctor and investigate the prototype with another tester
+	small bad - Fire Jermey for not being able to test your unique product
+	
+	best good - Send Jermey home, investigate the prototype and consider changing the material of band used on the product.
+
+	Very Bad - Its going to be fine. 
+
+
+-Convert Data 
+Hey, so the data that we recieved from the control groups is in, what do you want me to do with it?
+
+	Small good- find basic patterns within the data and tailor your product in a small way to reflect the new information
+	Small bad- Look at the data and see if there is a simple software update that can be done without having to change the overall structure of the product
+	Big good- Find all the corelations in the data that you can and make sure that they product is in line with the information extracted making necessary software and hardware changed
+	Big Bad - Make as many fancy graphs and pie charts as you can to look smart in front of the team, but make no design changes what so ever to the product
+
+- Train Users & Document System
+Hey boss, did you see the new employee that the shareholders gave us? Its his first day, shouldn't you be training him?
+
+	Small good - Get one of your best employees who is fimiliar with the system to train the new employee
+
+	Small bad - give the new employee all the documentation you have on the product and set him free
+
+	big good - sit down with the new employee for the rest of the week and make sure that he is up to speed with everthing that has been done so far
+
+	Big bad - Offer the new employee some coffee and stand around awkwardly until you pat him on the back and go to your office
+
+
+- Install the System
+The product is ready to ship but the problem is that we haven't installed the latest firmwire onto the product. What do you want to do 
+
+	Small good - ship the product but do a firmware update after release.
+	
+	Small bad - ship the watch but put out an update the same day
+
+	Big good - Hold off on the launch until all the products are up to date
+	
+	Big Bad - Don't worry about the updates, no one pays attention to them anyway
+
+
+
+System and Security 
+
+- Maintain the system
+Our product has be out for a while in beta testing but we seem to be having an overload on the server systems, Ive pumped as much juice out of them as I can, but its going to fail within the next few days as we add more users 
+
+	Small good - order another server so that the launch of the product will be a success and the server load can be handled 
+	small bad - limit the amount of people that can use the service at the same time 
+	big good - get some server space from a third party right away to handle the load, and get some more servers for the launch 
+	big bad - wait to see what happens in the next few days and do nothing and blame any problems on the IT guy
+
+- Enhance the System
+Boss, we are ugrading the security for our product, Should we do high security or low security?
+small good - go high, make sure none of those people get in our systems.
+good - go high, we need to prevent hackers and other sites from building there own programs to modify the software we have already built inside the device for the customer.
+small bad - go high, just be cheap about it
+bad - Do we really need security for a this product? 
+
+
+- Support the users
+What system should be put in place to handle system issues from the customers?
+small good - Include a phone/email for users to contact us on
+small bad - Just stick it in small fine print in the instructions, make it a game for them.
+good - Create a hotline for users to call in complaints and questions about the product and an online email address where you can communicate with users as well as social media
+
+bad - Honestly? It should be so simple to handle. If they don’t know how to do it from the start then they dont deserve to have our product anyway. 
+ 
