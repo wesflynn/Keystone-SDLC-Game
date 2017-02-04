@@ -49,7 +49,7 @@ public class Game extends Application
         
         GraphicsContext brush = canvas.getGraphicsContext2D();
         brush.setFont(
-                new Font(brush.getFont().getSize()).font("monospaced")
+                new Font(brush.getFont().getSize()).font("monospaced", brush.getFont().getSize()+4)
         );
         
         // start of game loop logic
@@ -113,7 +113,7 @@ public class Game extends Application
         int[] npc1Points = {
             1, 2, -1, -2
         };
-        Message npc1Question = new Message("1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n\nhit enter....", npc1Answers, npc1Responses, npc1Points);
+        Message npc1Question = new Message("1\n2\n3\n4\n5\n6\n7\n8\n\nhit enter....", npc1Answers, npc1Responses, npc1Points);
         
         NPC npc1 = new NPC(235, 225, Color.BLUE,
                 npc1Question);
@@ -122,7 +122,7 @@ public class Game extends Application
         // Build NPC 2
         String[] npc2Answers = {
             "this should give you one point", //1
-            "this should give you two points", //2
+            "this should give you two points Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet finibus eros. Ut ipsum mauris, mattis sit amet erat facilisis, iaculis convallis felis. Ut fringilla sodales libero,", //2
             "this should lose you one point", //3
             "this should lose you two points" //4
         };
