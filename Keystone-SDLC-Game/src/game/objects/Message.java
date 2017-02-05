@@ -23,6 +23,7 @@ public class Message implements Drawable
     private final double WIDTH = 500;
     
     private final int LINE_WIDTH = 49; //monospaced characters
+    private final int TEXT_HEIGHT = 8;
     
     private final Color TEXT_COLOR = Color.WHITE;
     private final Color BACKGROUND_COLOR = Color.BLACK;
@@ -34,6 +35,8 @@ public class Message implements Drawable
     private String[] answers;
     private ArrayList<String> responses;
     private int[] points;
+    
+    private int questionPagesSize;
     
     public Message(String question, String[] answers, ArrayList<String> responses, int[] points)
     {
@@ -48,10 +51,8 @@ public class Message implements Drawable
         String currPage = "";
         while(tempStr.length() > 0)
         {
-            System.out.println("Linecount:" + lineCount);
-            if(lineCount < 8)
+            if(lineCount < TEXT_HEIGHT)
             {
-                System.out.println("tempStr len:" + tempStr.length());
                 if(tempStr.length() > LINE_WIDTH)
                 {
                     int tempInt = tempStr.lastIndexOf(" ", LINE_WIDTH);
@@ -78,22 +79,34 @@ public class Message implements Drawable
             }
         }
         pages.add(currPage);
+        questionPagesSize = pages.size();
         currPage = "";
+        lineCount = 0;
         for(int i = 0; i < answers.length; i++)
         {
             tempStr = (i+1) + ". " + answers[i];
             while(tempStr.length() > 0)
             {
-                if(tempStr.length() > LINE_WIDTH)
+                if(lineCount < TEXT_HEIGHT)
                 {
-                    int tempInt = tempStr.lastIndexOf(" ", LINE_WIDTH);
-                    currPage += tempStr.substring(0, tempInt) + "\n";
-                    tempStr = tempStr.substring(tempInt);
+                    if(tempStr.length() > LINE_WIDTH -2)
+                    {
+                        int tempInt = tempStr.lastIndexOf(" ", LINE_WIDTH);
+                        currPage += tempStr.substring(0, tempInt) + "\n";
+                        tempStr = "  " + tempStr.substring(tempInt);
+                    }
+                    else
+                    {
+                        currPage += tempStr + "\n";
+                        tempStr = "";
+                    }
+                    lineCount++;
                 }
                 else
                 {
-                    currPage += tempStr + "\n";
-                    tempStr = "";
+                    pages.add(currPage + "\n          Press [ENTER] to continue...");
+                    currPage = "";
+                    lineCount = 0;
                 }
             }
         }
@@ -139,6 +152,11 @@ public class Message implements Drawable
     public int getPoints(int i)
     {
         return this.points[i];
+    }
+    
+    public int getQuestionPagesSize()
+    {
+        return this.questionPagesSize;
     }
     
     public void addText(String txt)

@@ -120,28 +120,32 @@ public class GameLevel
                 }
                 
                 // Read input if none have been recieved
-                if(npc.getQuestion().getPage() == npc.getQuestion().getPages().size() - 1)
+                if(npc.getQuestion().getPage() > npc.getQuestion().getQuestionPagesSize()-1)
                 {
                     if(input.contains("DIGIT1") && npc.getAnswerListener())
                     {
+                        System.out.println("Digit 1");
                         npc.setAnswerListener(false);
                         npc.getQuestion().showResponse(0);
                         this.bar.addProgress(npc.getQuestion().getPoints(0));
                     }
                     else if(input.contains("DIGIT2") && npc.getAnswerListener())
                     {
+                        System.out.println("Digit 1");
                         npc.setAnswerListener(false);
                         npc.getQuestion().showResponse(1);
                         this.bar.addProgress(npc.getQuestion().getPoints(1));
                     }
                     else if(input.contains("DIGIT3") && npc.getAnswerListener())
                     {
+                        System.out.println("Digit 1");
                         npc.setAnswerListener(false);
                         npc.getQuestion().showResponse(2);
                         this.bar.addProgress(npc.getQuestion().getPoints(2));
                     }   
                     else if(input.contains("DIGIT4") && npc.getAnswerListener())
                     {
+                        System.out.println("Digit 1");
                         npc.setAnswerListener(false);
                         npc.getQuestion().showResponse(3);
                         this.bar.addProgress(npc.getQuestion().getPoints(3));
