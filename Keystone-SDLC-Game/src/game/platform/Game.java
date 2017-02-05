@@ -63,7 +63,7 @@ public class Game extends Application
             @Override
             public void handle(long now)
             {
-                GameLevel.CURRENT_LEVEL = testLevel;
+                GameLevel.CURRENT_LEVEL = level1;
                 // Sleep for at least 1000000 nanoseconds
                 //               a.k.a 1/1000th of a second
                 if(now - then > 10000000)
