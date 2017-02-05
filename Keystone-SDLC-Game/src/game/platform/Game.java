@@ -49,7 +49,7 @@ public class Game extends Application
         
         GraphicsContext brush = canvas.getGraphicsContext2D();
         brush.setFont(
-                new Font(brush.getFont().getSize()).font("monospaced", brush.getFont().getSize()+4)
+                new Font(brush.getFont().getSize()).font("monospaced", 16)
         );
         
         // start of game loop logic
