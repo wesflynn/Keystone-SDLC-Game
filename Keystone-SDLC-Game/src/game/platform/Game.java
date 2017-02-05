@@ -158,19 +158,13 @@ public class Game extends Application
         
         // Build NPC 1
         String[] npc1Answers = {
-            "People from the team have become increasing interested in wearable tech,\n" +
-"		with team members purchasing iPhone watches. Perhaps creating a watch that \n" +
-"		can work with both iPhone and Android is a good move to make.", //Should give you one point
+            "People from the team have become increasing interested in wearable tech, with team members purchasing iPhone watches. Perhaps creating a watch that can work with both iPhone and Android is a good move to make.", //Should give you one point
             
             "Spend some extra time thinking of a new product that no one else seems to be producing and introduce it to the market", //2
             
-            "The team has suggested that we just buy a bunch of fake iPhones from \n" +
-"		the Chinese market and rebrand them and translate them into English. ", //This should make you lose one point
+            "The team has suggested that we just buy a bunch of fake iPhones from the Chinese market and rebrand them and translate them into English. ", //This should make you lose one point
             
-            "A member of the team remembers reading something about nanotechnology and \n" +
-"		cybernetic bodily enhancements. He thinks that pushing an untested and \n" +
-"		slightly dangerous technology is a ballsy move that could push the company\n" +
-"		into the future." //Should make you lose two points 
+            "A member of the team remembers reading something about nanotechnology and cybernetic bodily enhancements. He thinks that pushing an untested and slightly dangerous technology is a ballsy move that could push the company into the future." //Should make you lose two points 
         };
         ArrayList<String> npc1Responses = new ArrayList()
         {{
