@@ -9,12 +9,12 @@ import javafx.scene.paint.Color;
  */
 public class ProgressBar implements Drawable
 {
-    private int progress;
+    private static int progress =5;
     private int barChange = 200;
     
     public ProgressBar()
     {
-        this.progress=5;
+//        this.progress=5;
     }
     
     @Override

@@ -13,6 +13,7 @@ public class NPC extends Character
     private boolean nextListener = false;
     private boolean backListener = false;
     private boolean answerListener = false;
+    private boolean endcontact=false;
     private int currentMessage = 0;
     
     public boolean firstEnter = true;
@@ -85,4 +86,13 @@ public class NPC extends Character
     {
         this.currentMessage = i;
     }
+
+    public boolean isEndcontact() {
+        return endcontact;
+    }
+
+    public void setEndcontact(boolean endcontact) {
+        this.endcontact = endcontact;
+    }
+    
 }

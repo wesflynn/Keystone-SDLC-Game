@@ -40,12 +40,18 @@ public class GameLevel
     
     public void updateAndDraw(GraphicsContext brush)
     {
-        //TEMP vvvvv
-        if(input.contains("SPACE"))
+
+        
+        if(input.contains("SPACE")&&(input.contains("CONTROL")))
+            levelComplete=true;
+        
+        if(levelComplete==true)
         {
-            Game.loadNextLevel(scene);
+           Game.loadNextLevel(scene);
+           levelComplete=false;
         }
-        //TEMP ^^^^^
+        
+        
         if(this.levelComplete)
         {
             Game.loadNextLevel(scene);
@@ -139,6 +145,7 @@ public class GameLevel
                         npc.setAnswerListener(false);
                         npc.getQuestion().showResponse(0);
                         this.bar.addProgress(npc.getQuestion().getPoints(0));
+                        npc.setEndcontact(true);
                     }
                     else if(input.contains("DIGIT2") && npc.getAnswerListener())
                     {
@@ -146,6 +153,7 @@ public class GameLevel
                         npc.setAnswerListener(false);
                         npc.getQuestion().showResponse(1);
                         this.bar.addProgress(npc.getQuestion().getPoints(1));
+                        npc.setEndcontact(true);
                     }
                     else if(input.contains("DIGIT3") && npc.getAnswerListener())
                     {
@@ -153,6 +161,7 @@ public class GameLevel
                         npc.setAnswerListener(false);
                         npc.getQuestion().showResponse(2);
                         this.bar.addProgress(npc.getQuestion().getPoints(2));
+                        npc.setEndcontact(true);
                     }   
                     else if(input.contains("DIGIT4") && npc.getAnswerListener())
                     {
@@ -160,6 +169,7 @@ public class GameLevel
                         npc.setAnswerListener(false);
                         npc.getQuestion().showResponse(3);
                         this.bar.addProgress(npc.getQuestion().getPoints(3));
+                        npc.setEndcontact(true);
                     }
                 }
                 
@@ -196,6 +206,12 @@ public class GameLevel
                 {
                     npc.firstEnter = false;
                     npc.setNextListener(false);
+                }
+                
+                if(npc.isEndcontact() && input.contains("ENTER") && !npc.getNextListener())
+                {
+                    levelComplete=true;
+                    npc.setEndcontact(false);
                 }
             }
             //if not near npc, reset vars
