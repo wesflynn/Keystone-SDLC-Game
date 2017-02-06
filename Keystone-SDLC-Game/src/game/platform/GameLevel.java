@@ -10,7 +10,9 @@ import javafx.scene.input.KeyEvent;
 public class GameLevel
 {
     public static GameLevel CURRENT_LEVEL;
-    public boolean levelComplete = false;
+    public boolean levelComplete=false;
+    private boolean titlecard;
+    private Image card;
     private final Scene scene;
     private final Player player;
     private final ProgressBar bar;
@@ -26,21 +28,22 @@ public class GameLevel
      * @param npcs array list of npc characters in level
      * @param background image of level background
      */
-    public GameLevel(Scene scene, Player player, ArrayList<NPC> npcs, Image background)
+    public GameLevel(Scene scene, Player player, ArrayList<NPC> npcs, Image background ,Image titleCard)
     {
         this.scene = scene;
         this.player = player;
         this.npcs = npcs;
         this.bgImage = background;
-        
+        this.card=titleCard;
         this.bar = new ProgressBar();
-        
+        this.titlecard=true;
         input = GameLevel.getInput(this.scene);
     }
     
     public void updateAndDraw(GraphicsContext brush)
     {
-
+        if(input.contains("ENTER"))
+            titlecard=false;
         
         if(input.contains("SPACE")&&(input.contains("CONTROL")))
             levelComplete=true;
@@ -102,6 +105,9 @@ public class GameLevel
         bar.update();
         bar.draw(brush);
         
+        if(titlecard==true){
+            brush.drawImage(card, 0, 0);
+        }
         // interpret message for any npc close to player
         // and show
         for(NPC npc : npcs)

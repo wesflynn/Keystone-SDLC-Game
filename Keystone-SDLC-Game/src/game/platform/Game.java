@@ -126,6 +126,7 @@ public class Game extends Application
         Player player = new Player();
         ArrayList<NPC> npcs = new ArrayList<>();
         Image bgImage = new Image("images/office-bg1.jpg");
+        Image title= new Image("images/LevelOne.png",800,780,false,false);
         
         // Build NPC 1
         String[] npc1Answers = {
@@ -159,7 +160,7 @@ public class Game extends Application
         // Add npcs to array list
         npcs.add(npc1);
         
-        return new GameLevel(scene, player, npcs, bgImage);
+        return new GameLevel(scene, player, npcs, bgImage,title);
     }
     
     
@@ -168,7 +169,7 @@ public class Game extends Application
         Player player = new Player();
         ArrayList<NPC> npcs = new ArrayList<>();
         Image bgImage = new Image("images/office-bg1.jpg");
-        
+       Image title= new Image("images/LevelTwo.png",800,780,false,false); 
         // Build NPC 2
         String[] npc2Answers = {
             "You look at previous jobs that your team members have done and their job within the project and assign roles based on that.", //1
@@ -198,7 +199,7 @@ public class Game extends Application
         
         npcs.add(npc2);
         
-        return new GameLevel(scene, player, npcs, bgImage);
+        return new GameLevel(scene, player, npcs, bgImage,title);
     }
     
     private static GameLevel level3(Scene scene)
@@ -206,7 +207,7 @@ public class Game extends Application
         Player player = new Player();
         ArrayList<NPC> npcs = new ArrayList<>();
         Image bgImage = new Image("images/office-bg1.jpg");
-        
+        Image title= new Image("images/LevelThree.png",800,780,false,false);
         // Build NPC 3
         String[] npc3Answers = {
             "Ditch every idea you have had so far and go with the cybernetic bodily enhancements and ask the company for nothing short of a fortune to get it off the ground.", //1
@@ -237,7 +238,7 @@ public class Game extends Application
         
         npcs.add(npc3);
         
-        return new GameLevel(scene, player, npcs, bgImage);
+        return new GameLevel(scene, player, npcs, bgImage,title);
     }
         
     private static GameLevel level4(Scene scene)
@@ -245,7 +246,7 @@ public class Game extends Application
         Player player = new Player();
         ArrayList<NPC> npcs = new ArrayList<>();
         Image bgImage = new Image("images/office-bg1.jpg");
-        
+        Image title= new Image("images/LevelFour.png",800,780,false,false);
        // Build NPC 4
         String[] npc4Answers = {
             "Each team member has to report on how much time they think is required for each section of the project. Based on the teams report you create " +
@@ -276,7 +277,7 @@ public class Game extends Application
         
         npcs.add(npc4);
         
-        return new GameLevel(scene, player, npcs, bgImage);
+        return new GameLevel(scene, player, npcs, bgImage,title);
     }
             
     private static GameLevel level5(Scene scene)
@@ -284,7 +285,7 @@ public class Game extends Application
         Player player = new Player();
         ArrayList<NPC> npcs = new ArrayList<>();
         Image bgImage = new Image("images/office-bg1.jpg");
-        
+        Image title= new Image("images/LevelFive.png",800,780,false,false);
         // Build NPC 5
         String[] npc5Answers = {
             "Reassure him that the team has been hand picked and that we need to support our team as much as we can.", //1
@@ -312,7 +313,7 @@ public class Game extends Application
         
         npcs.add(npc5);
         
-        return new GameLevel(scene, player, npcs, bgImage);
+        return new GameLevel(scene, player, npcs, bgImage,title);
     }    
 
 }
