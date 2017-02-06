@@ -56,24 +56,23 @@ public class Game extends Application
         AnimationTimer gameLoop = new AnimationTimer()
         {
             
-            //GameLevels
-            GameLevel level1 = Game.level1(scene);
-            GameLevel level2 = Game.level2(scene);
-            GameLevel level3 = Game.level3(scene);
-            GameLevel level4 = Game.level4(scene);
-            GameLevel level5 = Game.level5(scene);
+            GameLevel level = Game.level1(scene);
+
             
             long then = System.nanoTime();
             @Override
             public void handle(long now)
             {
-                GameLevel.CURRENT_LEVEL = level1;
+//                 handled this really slopping jsut to get it done but the if could go into method later
+                
+//                GameLevel.CURRENT_LEVEL=level;
+                level.nextLevel(level1(scene), Game.level2(scene));
+                
                 // Sleep for at least 1000000 nanoseconds
                 //               a.k.a 1/1000th of a second
-                if(now - then > 10000000)
+                if(now - then > 1000000)
                 {
                     then = now;
-                    
                     // Reset Canvas
                     this.resetCanvas(brush);
                     
@@ -94,7 +93,7 @@ public class Game extends Application
         gameLoop.start();
         mainStage.show();
     }
-    
+
     private static GameLevel level1(Scene scene)
     {
        
@@ -288,5 +287,6 @@ public class Game extends Application
         npcs.add(npc5);
         
         return new GameLevel(scene, player, npcs, bgImage);
-    }
+    }    
+
 }
