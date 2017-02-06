@@ -56,8 +56,12 @@ public class Game extends Application
         AnimationTimer gameLoop = new AnimationTimer()
         {
             
-            //GameLevel testLevel = Game.buildTestLevel(scene);
+            //GameLevels
             GameLevel level1 = Game.level1(scene);
+            GameLevel level2 = Game.level2(scene);
+            GameLevel level3 = Game.level3(scene);
+            GameLevel level4 = Game.level4(scene);
+            GameLevel level5 = Game.level5(scene);
             
             long then = System.nanoTime();
             @Override
@@ -89,64 +93,6 @@ public class Game extends Application
         
         gameLoop.start();
         mainStage.show();
-    }
-    
-    private static GameLevel buildTestLevel(Scene scene)
-    {
-        Player player = new Player();
-        ArrayList<NPC> npcs = new ArrayList<>();
-        Image bgImage = new Image("images/office-bg1.jpg");
-        
-        // Build NPC 1
-        String[] npc1Answers = {
-            "this should give you one point", //1
-            "this should give you two points", //2
-            "this should lose you one point", //3
-            "this should lose you two points" //4
-        };
-        ArrayList<String> npc1Responses = new ArrayList()
-        {{
-            add("1 point");
-            add("2 point");
-            add("-1 point");
-            add("-2 point");
-        }};
-        int[] npc1Points = {
-            1, 2, -1, -2
-        };
-        Message npc1Question = new Message("This is a fake test question. Use ENTER to go forward a page. BACKSPACE to go back a page. and numbers 1 through 4 to answer questions.", npc1Answers, npc1Responses, npc1Points);
-        
-        NPC npc1 = new NPC(235, 225, Color.BLUE,
-                npc1Question);
-        
-        
-        // Build NPC 2
-        String[] npc2Answers = {
-            "this should give you one point", //1
-            "this should give you two points Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet finibus eros. Ut ipsum mauris, mattis sit amet erat facilisis, iaculis convallis felis. Ut fringilla sodales libero,", //2
-            "this should lose you one point", //3
-            "this should lose you two points" //4
-        };
-        ArrayList<String> npc2Responses = new ArrayList()
-        {{
-            add("1p");
-            add("2p");
-            add("-1p");
-            add("-2p");
-        }};
-        int[] npc2Points = {
-            1, 2, -1, -2
-        };
-        Message npc2Question = new Message("Sed tempus ullamcorper velit at porta. Donec venenatis laoreet sapien, a pharetra orci ornare condimentum. Nulla nec nisl sed risus tempus porta vel vitae tortor. Etiam eget nulla orci. Vivamus semper, metus vitae pretium aliquet, risus erat condimentum turpis, non porta ligula ligula gravida dui. Aliquam interdum quis ligula vitae blandit. Maecenas id quam dignissim, malesuada justo quis, eleifend augue. Quisque ut malesuada nibh. Maecenas bibendum, enim et rutrum tincidunt, nisl enim posuere quam, ac ullamcorper felis ante vel velit. In sagittis et tellus ac aliquet. Cras eget egestas elit. Aenean sollicitudin mi quis leo finibus aliquam. Sed dictum, quam et interdum posuere, purus elit gravida dolor, nec laoreet nibh velit et odio. Proin nec orci sed felis maximus laoreet. Quisque hendrerit, nisl non posuere interdum, lorem velit elementum nulla, vel bibendum ex metus in urna. Pellentesque eleifend condimentum tellus, nec aliquet nisl consectetur convallis.", npc2Answers, npc2Responses, npc2Points);
-        
-        NPC npc2 = new NPC(485, 575, Color.GREEN,
-                npc2Question);
-        
-        // Add npcs to array list
-        npcs.add(npc1);
-        npcs.add(npc2);
-        
-        return new GameLevel(scene, player, npcs, bgImage);
     }
     
     private static GameLevel level1(Scene scene)
@@ -185,6 +131,18 @@ public class Game extends Application
         NPC npc1 = new NPC(235, 225, Color.BLUE,
                 npc1Question);
         
+        // Add npcs to array list
+        npcs.add(npc1);
+        
+        return new GameLevel(scene, player, npcs, bgImage);
+    }
+    
+    
+    private static GameLevel level2(Scene scene)
+    {
+        Player player = new Player();
+        ArrayList<NPC> npcs = new ArrayList<>();
+        Image bgImage = new Image("images/office-bg1.jpg");
         
         // Build NPC 2
         String[] npc2Answers = {
@@ -211,9 +169,20 @@ public class Game extends Application
                 "resources appropriately in order to increase efficiency.", npc2Answers, npc2Responses, npc2Points);
         
         NPC npc2 = new NPC(485, 575, Color.GREEN,
-                npc2Question);
+                npc2Question); 
         
-         // Build NPC 3
+        npcs.add(npc2);
+        
+        return new GameLevel(scene, player, npcs, bgImage);
+    }
+    
+    private static GameLevel level3(Scene scene)
+    {
+        Player player = new Player();
+        ArrayList<NPC> npcs = new ArrayList<>();
+        Image bgImage = new Image("images/office-bg1.jpg");
+        
+        // Build NPC 3
         String[] npc3Answers = {
             "Ditch every idea you have had so far and go with the cybernetic bodily enhancements and ask the company for nothing short of a fortune to get it off the ground.", //1
             
@@ -239,7 +208,18 @@ public class Game extends Application
                 "cheques left to right, but they did give us a chance to write a proposal to say how much we need.", npc3Answers, npc3Responses, npc3Points);
         
         NPC npc3 = new NPC(385, 475, Color.ORANGE,
-                npc3Question);
+                npc3Question); 
+        
+        npcs.add(npc3);
+        
+        return new GameLevel(scene, player, npcs, bgImage);
+    }
+        
+    private static GameLevel level4(Scene scene)
+    {
+        Player player = new Player();
+        ArrayList<NPC> npcs = new ArrayList<>();
+        Image bgImage = new Image("images/office-bg1.jpg");
         
        // Build NPC 4
         String[] npc4Answers = {
@@ -268,6 +248,18 @@ public class Game extends Application
         NPC npc4 = new NPC(285, 275, Color.YELLOW,
                 npc4Question); 
         
+        
+        npcs.add(npc4);
+        
+        return new GameLevel(scene, player, npcs, bgImage);
+    }
+            
+    private static GameLevel level5(Scene scene)
+    {
+        Player player = new Player();
+        ArrayList<NPC> npcs = new ArrayList<>();
+        Image bgImage = new Image("images/office-bg1.jpg");
+        
         // Build NPC 5
         String[] npc5Answers = {
             "Reassure him that the team has been hand picked and that we need to support our team as much as we can.", //1
@@ -293,12 +285,6 @@ public class Game extends Application
         NPC npc5 = new NPC(285, 275, Color.YELLOW,
                 npc5Question); 
         
-        
-        // Add npcs to array list
-        npcs.add(npc1);
-        npcs.add(npc2);
-        npcs.add(npc3);
-        npcs.add(npc4);
         npcs.add(npc5);
         
         return new GameLevel(scene, player, npcs, bgImage);
