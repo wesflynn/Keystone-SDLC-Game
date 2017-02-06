@@ -111,11 +111,6 @@ public class Message implements Drawable
             }
         }
         pages.add(currPage);
-        
-        for(String pg : pages)
-        {
-            System.out.println("-------------\n" + pg + "\n-------------");
-        }
     }
     
     @Override

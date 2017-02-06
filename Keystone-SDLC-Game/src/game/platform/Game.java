@@ -25,6 +25,8 @@ public class Game extends Application
 {
     public static final double DEFAULT_WIDTH = 800;
     public static final double DEFAULT_HEIGHT = 780;
+    
+    private static int currentLevel = 0;
     /**
      * @param args the command line arguments
      */
@@ -52,13 +54,11 @@ public class Game extends Application
                 new Font(brush.getFont().getSize()).font("monospaced", 16)
         );
         
+        Game.loadNextLevel(scene);
+        
         // start of game loop logic
         AnimationTimer gameLoop = new AnimationTimer()
         {
-            
-            GameLevel level = Game.level1(scene);
-
-            
             long then = System.nanoTime();
             @Override
             public void handle(long now)
@@ -66,11 +66,11 @@ public class Game extends Application
 //                 handled this really slopping jsut to get it done but the if could go into method later
                 
 //                GameLevel.CURRENT_LEVEL=level;
-                level.nextLevel(level1(scene), Game.level2(scene));
+                //level.nextLevel(level1(scene), Game.level2(scene));
                 
                 // Sleep for at least 1000000 nanoseconds
                 //               a.k.a 1/1000th of a second
-                if(now - then > 1000000)
+                if(now - then > 10000000)
                 {
                     then = now;
                     // Reset Canvas
@@ -92,6 +92,32 @@ public class Game extends Application
         
         gameLoop.start();
         mainStage.show();
+    }
+    
+    public static void loadNextLevel(Scene scene)
+    {   
+        currentLevel++;
+        switch(currentLevel)
+        {
+            case 1:
+                GameLevel.CURRENT_LEVEL = Game.level1(scene);
+                break;
+            case 2:
+                GameLevel.CURRENT_LEVEL = Game.level2(scene);
+                break;
+            case 3:
+                GameLevel.CURRENT_LEVEL = Game.level3(scene);
+                break;
+            case 4:
+                GameLevel.CURRENT_LEVEL = Game.level4(scene);
+                break;
+            case 5:
+                GameLevel.CURRENT_LEVEL = Game.level5(scene);
+                break;
+                
+            default:
+                new Exception("ERROR: Trying to load unknown game level: " + currentLevel);
+        }
     }
 
     private static GameLevel level1(Scene scene)

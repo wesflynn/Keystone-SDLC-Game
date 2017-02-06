@@ -10,7 +10,7 @@ import javafx.scene.input.KeyEvent;
 public class GameLevel
 {
     public static GameLevel CURRENT_LEVEL;
-    public static boolean levelComplete = false;
+    public boolean levelComplete = false;
     private final Scene scene;
     private final Player player;
     private final ProgressBar bar;
@@ -40,6 +40,17 @@ public class GameLevel
     
     public void updateAndDraw(GraphicsContext brush)
     {
+        //TEMP vvvvv
+        if(input.contains("SPACE"))
+        {
+            Game.loadNextLevel(scene);
+        }
+        //TEMP ^^^^^
+        if(this.levelComplete)
+        {
+            Game.loadNextLevel(scene);
+        }
+        
         //  draw background
         brush.drawImage(bgImage, 0, 0);
         
@@ -207,7 +218,6 @@ public class GameLevel
             if (!input.contains(code))
             {
                 input.add(code);
-                
             }
         });
 
@@ -219,7 +229,7 @@ public class GameLevel
         
         return input;
     }
-    
+    /*
     public void nextLevel(GameLevel level,GameLevel leveln)
     {
         if ((GameLevel.CURRENT_LEVEL == level) && (GameLevel.levelComplete==true))
@@ -230,5 +240,5 @@ public class GameLevel
         else
             CURRENT_LEVEL=level;
         
-    }
+    }*/
 }
