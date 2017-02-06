@@ -13,6 +13,8 @@ public class GameLevel
     public boolean levelComplete=false;
     private boolean titlecard;
     private Image card;
+    private Image dead;
+    private Image good;
     private final Scene scene;
     private final Player player;
     private final ProgressBar bar;
@@ -37,6 +39,8 @@ public class GameLevel
         this.card=titleCard;
         this.bar = new ProgressBar();
         this.titlecard=true;
+        this.good=new Image("images/GOODENDING.png",800,780,false,false);
+        this.dead=new Image("images/YOURDEAD.png",800,780,false,false);
         input = GameLevel.getInput(this.scene);
     }
     
@@ -67,10 +71,8 @@ public class GameLevel
         for(NPC npc : npcs)
         {
             npc.update();
-            npc.draw(brush);
-            
+            npc.draw(brush);   
         }
-        
         // read input for player movement
         player.move(input);
         
@@ -113,6 +115,15 @@ public class GameLevel
         for(NPC npc : npcs)
         {
             this.handleInteraction(brush, npc);
+        }
+        
+        if (bar.getProgress()>=10)
+        {
+            brush.drawImage(good, 0, 0);
+        }
+        if (bar.getProgress()<=0)
+        {
+            brush.drawImage(dead, 0, 0);
         }
     }
     
@@ -251,16 +262,4 @@ public class GameLevel
         
         return input;
     }
-    /*
-    public void nextLevel(GameLevel level,GameLevel leveln)
-    {
-        if ((GameLevel.CURRENT_LEVEL == level) && (GameLevel.levelComplete==true))
-        {
-        levelComplete=false;
-        CURRENT_LEVEL=leveln;
-        }
-        else
-            CURRENT_LEVEL=level;
-        
-    }*/
 }
