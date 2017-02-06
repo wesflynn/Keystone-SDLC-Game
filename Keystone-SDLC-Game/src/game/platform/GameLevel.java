@@ -59,7 +59,6 @@ public class GameLevel
            levelComplete=false;
         }
         
-        
         if(this.levelComplete)
         {
             Game.loadNextLevel(scene);

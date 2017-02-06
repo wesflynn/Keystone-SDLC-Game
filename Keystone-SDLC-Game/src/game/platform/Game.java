@@ -297,7 +297,7 @@ public class Game extends Application
             add("-1 point");
         }};
         int[] npc5Points = {
-            1, -2, 2, -1
+            1, -10, 2, -10
         };
         Message npc5Question = new Message("I have doubts that this product is going to be feasible on the market and think that we should have another look at just exactly we are trying to do.", npc5Answers, npc5Responses, npc5Points);
         
