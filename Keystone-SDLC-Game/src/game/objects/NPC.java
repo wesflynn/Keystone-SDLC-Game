@@ -15,7 +15,6 @@ public class NPC extends Character
     private boolean answerListener = false;
     private boolean endcontact=false;
     private int currentMessage = 0;
-    
     public boolean firstEnter = true;
     
     public NPC(double x, double y, Color color,

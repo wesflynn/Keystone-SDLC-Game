@@ -105,6 +105,5 @@ public final class Player extends Character
     public boolean intersects(NPC npc)
     {
         return this.getBoundary().intersects( npc.getBoundary() );
-    }
-    
+    } 
 }

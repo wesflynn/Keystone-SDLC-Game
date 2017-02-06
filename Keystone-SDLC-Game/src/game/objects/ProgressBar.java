@@ -14,7 +14,7 @@ public class ProgressBar implements Drawable
     
     public ProgressBar()
     {
-//        this.progress=5;
+
     }
     
     @Override
@@ -66,6 +66,5 @@ public class ProgressBar implements Drawable
     {
         this.progress = progress;
     }
-    
-    
+     
 }

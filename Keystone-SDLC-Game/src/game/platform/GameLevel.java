@@ -15,6 +15,7 @@ public class GameLevel
     private Image card;
     private Image dead;
     private Image good;
+    
     private final Scene scene;
     private final Player player;
     private final ProgressBar bar;

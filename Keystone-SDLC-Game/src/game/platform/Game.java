@@ -63,11 +63,6 @@ public class Game extends Application
             @Override
             public void handle(long now)
             {
-//                 handled this really slopping jsut to get it done but the if could go into method later
-                
-//                GameLevel.CURRENT_LEVEL=level;
-                //level.nextLevel(level1(scene), Game.level2(scene));
-                
                 // Sleep for at least 1000000 nanoseconds
                 //               a.k.a 1/1000th of a second
                 if(now - then > 10000000)
@@ -162,7 +157,6 @@ public class Game extends Application
         
         return new GameLevel(scene, player, npcs, bgImage,title);
     }
-    
     
     private static GameLevel level2(Scene scene)
     {
@@ -273,8 +267,7 @@ public class Game extends Application
         
         NPC npc4 = new NPC(285, 275, Color.YELLOW,
                 npc4Question); 
-        
-        
+
         npcs.add(npc4);
         
         return new GameLevel(scene, player, npcs, bgImage,title);
